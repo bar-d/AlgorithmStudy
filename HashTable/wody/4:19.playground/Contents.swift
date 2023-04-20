@@ -54,3 +54,62 @@ func similarPairs(_ words: [String]) -> Int {
 }
 
 similarPairs(["aba","aabb","abcd","bac","aabc"])
+
+/*
+ https://leetcode.com/problems/check-distances-between-same-letters/
+ 2399. Check Distances Between Same Letters
+ */
+
+func checkDistances(_ s: String, _ distance: [Int]) -> Bool {
+    var result = true
+    let strings = s.map { String($0) }
+    let uniqueString = Set(strings)
+
+    for char in uniqueString {
+        let charIndex = Int(UnicodeScalar(char)?.value ?? 0) - 97
+        let firstIndex = (strings.firstIndex(of: char) ?? 0)
+        let lastIndex = (strings.lastIndex(of: char) ?? 0)
+        let distanceCount: Int = Int(lastIndex - firstIndex) - 1
+        let targetDistance = distance[charIndex]
+
+        if distanceCount != targetDistance {
+            result = false
+            break
+        }
+    }
+
+    return result
+}
+
+checkDistances("abbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzza", [49,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0])
+
+/*
+ https://leetcode.com/problems/sort-characters-by-frequency/
+ 451. 빈도별로 문자 정렬
+ */
+
+func frequencySort(_ s: String) -> String {
+    let chars = Array(s).map { String($0) }
+    var dict: [String: Int] = [:]
+
+    for char in chars {
+        dict[char] = (dict[char] ?? 0) + 1
+    }
+
+    let sortedDict = dict.sorted { first, second in
+        if first.value == second.value {
+            return first.key < second.key
+        }
+        return first.value > second.value
+    }
+
+    var result: String = ""
+
+    sortedDict.forEach { element in
+        for i in 0..<element.value {
+            result += element.key
+        }
+    }
+
+    return result
+}
