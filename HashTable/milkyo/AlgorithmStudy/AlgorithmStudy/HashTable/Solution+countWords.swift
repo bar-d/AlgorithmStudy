@@ -8,6 +8,7 @@
 import Foundation
 
 extension Solution {
+    // https://leetcode.com/problems/count-common-words-with-one-occurrence/
     func countWords(_ words1: [String], _ words2: [String]) -> Int {
         var dict1: [String: Int] = [:]
         var dict2: [String: Int] = [:]
