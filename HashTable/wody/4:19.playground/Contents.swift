@@ -113,3 +113,24 @@ func frequencySort(_ s: String) -> String {
 
     return result
 }
+
+/*
+ https://leetcode.com/problems/equal-row-and-column-pairs/
+ 2352. Equal Row and Column Pairs
+ */
+
+func equalPairs(_ grid: [[Int]]) -> Int {
+    grid[0]
+        .indices
+        .map { index in
+            grid.map { $0[index] }
+        }
+        .map { column in
+            grid.filter { row in
+                row == column
+            }.count
+        }
+        .reduce(0, +)
+}
+
+print(equalPairs([[3,2,1],[1,7,6],[2,7,7]]))
