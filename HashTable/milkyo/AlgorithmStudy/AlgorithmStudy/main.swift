@@ -8,6 +8,3 @@
 import Foundation
 
 class Solution {}
-
-
-

@@ -12,6 +12,8 @@
 		B9D4A8E429F1613300B67120 /* AlgorithmStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4A8E329F1613300B67120 /* AlgorithmStudyTests.swift */; };
 		B9D4A8EA29F161DE00B67120 /* Solution+countWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4A8DA29F1601200B67120 /* Solution+countWords.swift */; };
 		B9D4A8EB29F161E000B67120 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4A8C829F15C6D00B67120 /* main.swift */; };
+		B9D4A8EF29F2BCE900B67120 /* Solution+checkDistances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4A8EE29F2BCE900B67120 /* Solution+checkDistances.swift */; };
+		B9D4A8F029F2BF6D00B67120 /* Solution+checkDistances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4A8EE29F2BCE900B67120 /* Solution+checkDistances.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +34,7 @@
 		B9D4A8DA29F1601200B67120 /* Solution+countWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Solution+countWords.swift"; sourceTree = "<group>"; };
 		B9D4A8E129F1613300B67120 /* AlgorithmStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D4A8E329F1613300B67120 /* AlgorithmStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmStudyTests.swift; sourceTree = "<group>"; };
+		B9D4A8EE29F2BCE900B67120 /* Solution+checkDistances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Solution+checkDistances.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D4A8C829F15C6D00B67120 /* main.swift */,
-				B9D4A8DA29F1601200B67120 /* Solution+countWords.swift */,
+				B9D4A8F129F2C20800B67120 /* HashTable */,
 			);
 			path = AlgorithmStudy;
 			sourceTree = "<group>";
@@ -85,6 +88,15 @@
 				B9D4A8E329F1613300B67120 /* AlgorithmStudyTests.swift */,
 			);
 			path = AlgorithmStudyTests;
+			sourceTree = "<group>";
+		};
+		B9D4A8F129F2C20800B67120 /* HashTable */ = {
+			isa = PBXGroup;
+			children = (
+				B9D4A8DA29F1601200B67120 /* Solution+countWords.swift */,
+				B9D4A8EE29F2BCE900B67120 /* Solution+checkDistances.swift */,
+			);
+			path = HashTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D4A8EF29F2BCE900B67120 /* Solution+checkDistances.swift in Sources */,
 				B9D4A8DB29F1601200B67120 /* Solution+countWords.swift in Sources */,
 				B9D4A8C929F15C6D00B67120 /* main.swift in Sources */,
 			);
@@ -185,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D4A8F029F2BF6D00B67120 /* Solution+checkDistances.swift in Sources */,
 				B9D4A8EA29F161DE00B67120 /* Solution+countWords.swift in Sources */,
 				B9D4A8E429F1613300B67120 /* AlgorithmStudyTests.swift in Sources */,
 				B9D4A8EB29F161E000B67120 /* main.swift in Sources */,
