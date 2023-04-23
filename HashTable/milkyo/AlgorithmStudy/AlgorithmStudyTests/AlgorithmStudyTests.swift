@@ -40,4 +40,20 @@ final class AlgorithmStudyTests_HashTable: XCTestCase {
         let result = solution.checkDistances("aa", [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
         XCTAssertEqual(result, false)
     }
+    
+    // MARK: - Sort Characters By Frequency
+    func test_Sort_Characters_By_Frequency_Example1() {
+        let result = solution.frequencySort("tree")
+        XCTAssertEqual(result, "eert")
+    }
+    
+    func test_Sort_Characters_By_Frequency_Example2() {
+        let result = solution.frequencySort("cccaaa")
+        XCTAssertEqual(result, "aaaccc")
+    }
+    
+    func test_Sort_Characters_By_Frequency_Example3() {
+        let result = solution.frequencySort("Aabb")
+        XCTAssertEqual(result, "bbAa")
+    }
 }
