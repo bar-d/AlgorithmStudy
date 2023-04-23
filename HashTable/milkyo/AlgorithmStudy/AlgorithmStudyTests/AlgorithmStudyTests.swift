@@ -56,4 +56,15 @@ final class AlgorithmStudyTests_HashTable: XCTestCase {
         let result = solution.frequencySort("Aabb")
         XCTAssertEqual(result, "bbAa")
     }
+    
+    // MARK: - Equal Row and Column Pairs
+    func test_Equal_Row_and_Column_Pairs_Example1() {
+        let result = solution.equalPairs([[3,2,1],[1,7,6],[2,7,7]])
+        XCTAssertEqual(result, 1)
+    }
+    
+    func test_Equal_Row_and_Column_Pairs_Example2() {
+        let result = solution.equalPairs([[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]])
+        XCTAssertEqual(result, 3)
+    }
 }
