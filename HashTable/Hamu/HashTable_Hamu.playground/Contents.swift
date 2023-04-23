@@ -35,15 +35,45 @@ class Solution2 {
         var result = 0
 
         words.enumerated().forEach { index, word in
-            var pairResult = 0
             for i in (index + 1)..<words.count {
                 if word == words[i] {
-                    pairResult += 1
+                    result += 1
                 }
             }
-            result += pairResult
         }
         
         return result
     }
 }
+
+//MARK: - 2399. Check Distances Between Same Letters
+
+class Solution3 {
+    func checkDistances(_ s: String, _ distance: [Int]) -> Bool {
+        let s = s.map { $0 }
+        var map = Array(repeating: false, count: s.count)
+        var result = true
+        
+        s.enumerated().forEach { index, char in
+            if map[index] || !result { return }
+            guard let ascii = char.asciiValue,
+                  let asciiIndex = Character("a").asciiValue else { return }
+            let i = distance[Int(ascii - asciiIndex)] + index + 1
+            
+            if i >= s.count {
+                result.toggle()
+                return
+            }
+            if char != s[i] {
+                result.toggle()
+                return
+            }
+            map[i] = true
+        }
+        
+        return result
+    }
+}
+
+let solution = Solution3()
+print(solution.checkDistances("abbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzza", [50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0]))
