@@ -67,4 +67,20 @@ final class AlgorithmStudyTests_HashTable: XCTestCase {
         let result = solution.equalPairs([[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]])
         XCTAssertEqual(result, 3)
     }
+    
+    // MARK: - Count Pairs Of Similar Strings
+    func test_Count_Pairs_Of_Similar_Strings_Example1() {
+        let result = solution.similarPairs(["aba","aabb","abcd","bac","aabc"])
+        XCTAssertEqual(result, 2)
+    }
+    
+    func test_Count_Pairs_Of_Similar_Strings_Example2() {
+        let result = solution.similarPairs(["aabb","ab","ba"])
+        XCTAssertEqual(result, 3)
+    }
+    
+    func test_Count_Pairs_Of_Similar_Strings_Example3() {
+        let result = solution.similarPairs(["nba","cba","dba"])
+        XCTAssertEqual(result, 0)
+    }
 }
