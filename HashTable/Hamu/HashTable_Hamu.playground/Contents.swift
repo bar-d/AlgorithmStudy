@@ -75,5 +75,29 @@ class Solution3 {
     }
 }
 
-let solution = Solution3()
-print(solution.checkDistances("abbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzza", [50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ,0]))
+//MARK: - 451. Sort Characters By Frequency
+
+class Solution4 {
+    func frequencySort(_ s: String) -> String {
+        var map = [String: Int]()
+        
+        s.forEach { char in
+            map[String(char), default: 0] += 1
+        }
+        
+        let stringList = map.map { key, value in
+            (0..<value).map { _ in key }.joined()
+        }
+        
+        let result = stringList.sorted { $0.count > $1.count }
+        return result.joined()
+    }
+}
+
+//MARK: - 2352. Equal Row and Column Pairs
+
+class Solution5 {
+    func equalPairs(_ grid: [[Int]]) -> Int {
+        
+    }
+}
