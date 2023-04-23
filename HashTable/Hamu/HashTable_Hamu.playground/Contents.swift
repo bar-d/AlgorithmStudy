@@ -98,6 +98,23 @@ class Solution4 {
 
 class Solution5 {
     func equalPairs(_ grid: [[Int]]) -> Int {
+        var map = [String: Int]()
+        var rowMap = [String: Int]()
+        var columnMap = [String: Int]()
+        for (i, array) in grid.enumerated() {
+            var s = array.reduce("") { String($0) + "." + String($1) }
+            rowMap[s, default: 0] += 1
+            map[s, default: 0] += 1
+            s = String()
+            for j in 0..<array.count {
+                s += ".\(grid[j][i])"
+            }
+            columnMap[s, default: 0] += 1
+            map[s, default: 0] += 1
+        }
         
+        return map.map { key, value in
+            return (rowMap[key] ?? 0) * (columnMap[key] ?? 0)
+        }.reduce(0) { $0 + $1 }
     }
 }
