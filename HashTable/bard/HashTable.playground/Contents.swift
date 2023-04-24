@@ -34,3 +34,22 @@ func countWords(_ words1: [String], _ words2: [String]) -> Int {
     
     return setWords1.intersection(setWords2).count
 }
+
+// MARK: - https://leetcode.com/problems/count-pairs-of-similar-strings/description/
+
+func similarPairs(_ words: [String]) -> Int {
+    var count = 0
+    
+    for i in 0..<words.count {
+        for l in (i + 1)..<words.count {
+            let firstWord = Set(words[i])
+            let secondWord = Set(words[l])
+            
+            if firstWord == secondWord {
+                count += 1
+            }
+        }
+    }
+    
+    return count
+}
