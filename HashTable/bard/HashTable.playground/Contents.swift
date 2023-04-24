@@ -70,3 +70,35 @@ func checkDistances(_ s: String, _ distance: [Int]) -> Bool {
     
     return true
 }
+
+// MARK: - https://leetcode.com/problems/sort-characters-by-frequency/description/
+
+func frequencySort(_ s: String) -> String {
+    var dictionary: [Character: Int] = [:]
+    var result = ""
+    
+    for i in s {
+        if dictionary[i] == nil {
+            dictionary[i] = 1
+        } else {
+            dictionary[i]! += 1
+        }
+    }
+    
+    let sortedArray = dictionary.sorted(by: { first, second in
+        if first.value != second.value {
+            return first.value > second.value
+        } else {
+            return first.key.asciiValue! > second.key.asciiValue!
+        }
+    }).map { $0.key }
+    
+    for i in 0..<sortedArray.count {
+        let character = sortedArray[i]
+        for _ in 0..<dictionary[character]! {
+            result.append(character)
+        }
+    }
+    
+    return result
+}
