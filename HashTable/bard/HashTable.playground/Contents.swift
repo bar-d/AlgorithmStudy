@@ -102,3 +102,45 @@ func frequencySort(_ s: String) -> String {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/equal-row-and-column-pairs/description/
+
+func equalPairs(_ grid: [[Int]]) -> Int {
+    var rowArray = grid
+    var columnArray: [[Int]] = []
+    var rowDictionary: [[Int]: Int] = [:]
+    var columnDictionary: [[Int]: Int] = [:]
+    var count = 0
+    
+    for i in 0..<grid.count {
+        var column: [Int] = []
+        for l in 0..<grid.count {
+            column.append(rowArray[l][i])
+        }
+        columnArray.append(column)
+    }
+    
+    for i in 0..<grid.count {
+        if rowDictionary[rowArray[i]] == nil {
+            rowDictionary[rowArray[i]] = 1
+        } else {
+            rowDictionary[rowArray[i]]! += 1
+        }
+    }
+    
+    for i in 0..<grid.count {
+        if columnDictionary[columnArray[i]] == nil {
+            columnDictionary[columnArray[i]] = 1
+        } else {
+            columnDictionary[columnArray[i]]! += 1
+        }
+    }
+    
+    for i in rowDictionary.keys {
+        if columnDictionary[i] != nil {
+            count += rowDictionary[i]! * columnDictionary[i]!
+        }
+    }
+    
+    return count
+}
