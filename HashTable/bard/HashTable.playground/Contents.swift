@@ -53,3 +53,20 @@ func similarPairs(_ words: [String]) -> Int {
     
     return count
 }
+
+// MARK: - https://leetcode.com/problems/check-distances-between-same-letters/description/
+
+func checkDistances(_ s: String, _ distance: [Int]) -> Bool {
+    var dictionary = [Character: Int]()
+    
+    for (index, character) in Array(s).enumerated() {
+        if let firstIndex = dictionary[character],
+           index - 1 - firstIndex != distance[Int(character.asciiValue!) - 97] {
+            return false
+        } else {
+            dictionary[character] = index
+        }
+    }
+    
+    return true
+}
