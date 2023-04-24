@@ -25,3 +25,21 @@ class Solution1 {
         return result
     }
 }
+
+//MARK: - 2506. Count Pairs Of Similar Strings
+
+class Solution2 {
+    func similarPairs(_ words: [String]) -> Int {
+        var dict: [String:Int] = [:]
+        var result = 0
+        
+        for word in words {
+            let key = Set(word).sorted().map { String($0) }.joined()
+            dict[key, default: 0] += 1
+        }
+        for (_, value) in dict {
+            result += (value * (value - 1)) / 2
+        }
+        return result
+    }
+}
