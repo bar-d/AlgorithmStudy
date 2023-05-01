@@ -87,3 +87,28 @@ class Solution4 {
     }
 }
 
+//MARK: - 2390. Removing Stars From a String
+
+class Solution5 {
+    func removeStars(_ s: String) -> String {
+        var s = s.map { $0 }
+        var result = [String.Element]()
+        var starCount = 0
+        
+        while let char = s.popLast() {
+            if char == "*" {
+                starCount += 1
+                continue
+            }
+            
+            if starCount > 0 {
+                starCount -= 1
+                continue
+            }
+            
+            result.append(char)
+        }
+        
+        return String(result.reversed())
+    }
+}
