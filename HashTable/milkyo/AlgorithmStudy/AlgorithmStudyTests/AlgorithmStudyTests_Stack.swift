@@ -45,4 +45,23 @@ class AlgorithmStudyTests_Stack: XCTestCase {
         let result = solution.inorderTraversal(TreeNode(1))
         XCTAssertEqual(result, [1])
     }
+    
+    // MARK: - Baseball Game
+    func test_Baseball_Game_Example1() {
+        let result = solution.calPoints(["5","2","C","D","+"])
+        XCTAssertEqual(result, 30)
+    }
+    
+    
+    // MARK: - Baseball Game
+    func test_Baseball_Game_Example2() {
+        let result = solution.calPoints(["5","-2","4","C","D","9","+","+"])
+        XCTAssertEqual(result, 27)
+    }
+    
+    // MARK: - Baseball Game
+    func test_Baseball_Game_Example3() {
+        let result = solution.calPoints(["1","C"])
+        XCTAssertEqual(result, 0)
+    }
 }

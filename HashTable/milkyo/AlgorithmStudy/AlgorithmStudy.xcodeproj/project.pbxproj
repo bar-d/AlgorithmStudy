@@ -12,6 +12,8 @@
 		B9CD6FC629FF888100EAF256 /* AlgorithmStudyTests_Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD6FC529FF888100EAF256 /* AlgorithmStudyTests_Stack.swift */; };
 		B9CD6FC829FF8DAA00EAF256 /* Stack+InorderTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD6FC729FF8DAA00EAF256 /* Stack+InorderTraversal.swift */; };
 		B9CD6FC929FF8F7B00EAF256 /* Stack+InorderTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD6FC729FF8DAA00EAF256 /* Stack+InorderTraversal.swift */; };
+		B9CD6FCB29FF944400EAF256 /* Stack+BaseballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD6FCA29FF944400EAF256 /* Stack+BaseballGame.swift */; };
+		B9CD6FCC29FF94B900EAF256 /* Stack+BaseballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD6FCA29FF944400EAF256 /* Stack+BaseballGame.swift */; };
 		B9D4A8C929F15C6D00B67120 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4A8C829F15C6D00B67120 /* main.swift */; };
 		B9D4A8DB29F1601200B67120 /* Solution+countWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4A8DA29F1601200B67120 /* Solution+countWords.swift */; };
 		B9D4A8E429F1613300B67120 /* AlgorithmStudyTests_HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4A8E329F1613300B67120 /* AlgorithmStudyTests_HashTable.swift */; };
@@ -43,6 +45,7 @@
 		B9CD6FC229FF861D00EAF256 /* Stack+NextGreaterElement-I.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack+NextGreaterElement-I.swift"; sourceTree = "<group>"; };
 		B9CD6FC529FF888100EAF256 /* AlgorithmStudyTests_Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmStudyTests_Stack.swift; sourceTree = "<group>"; };
 		B9CD6FC729FF8DAA00EAF256 /* Stack+InorderTraversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack+InorderTraversal.swift"; sourceTree = "<group>"; };
+		B9CD6FCA29FF944400EAF256 /* Stack+BaseballGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack+BaseballGame.swift"; sourceTree = "<group>"; };
 		B9D4A8C529F15C6D00B67120 /* AlgorithmStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D4A8C829F15C6D00B67120 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B9D4A8DA29F1601200B67120 /* Solution+countWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Solution+countWords.swift"; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 			children = (
 				B9CD6FC229FF861D00EAF256 /* Stack+NextGreaterElement-I.swift */,
 				B9CD6FC729FF8DAA00EAF256 /* Stack+InorderTraversal.swift */,
+				B9CD6FCA29FF944400EAF256 /* Stack+BaseballGame.swift */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -222,6 +226,7 @@
 				B9E2F78329F502EA00E7997A /* Solution+similarPairs.swift in Sources */,
 				B9E2F78029F4FD0500E7997A /* Solution+equalPairs.swift in Sources */,
 				B9CD6FC329FF861D00EAF256 /* Stack+NextGreaterElement-I.swift in Sources */,
+				B9CD6FCB29FF944400EAF256 /* Stack+BaseballGame.swift in Sources */,
 				B9D4A8EF29F2BCE900B67120 /* Solution+checkDistances.swift in Sources */,
 				B9D4A8F329F2C3C900B67120 /* Solution+frequencySort.swift in Sources */,
 				B9D4A8DB29F1601200B67120 /* Solution+countWords.swift in Sources */,
@@ -239,6 +244,7 @@
 				B9CD6FC429FF863000EAF256 /* Stack+NextGreaterElement-I.swift in Sources */,
 				B9D4A8EA29F161DE00B67120 /* Solution+countWords.swift in Sources */,
 				B9CD6FC629FF888100EAF256 /* AlgorithmStudyTests_Stack.swift in Sources */,
+				B9CD6FCC29FF94B900EAF256 /* Stack+BaseballGame.swift in Sources */,
 				B9D4A8F429F2C63100B67120 /* Solution+frequencySort.swift in Sources */,
 				B9D4A8E429F1613300B67120 /* AlgorithmStudyTests_HashTable.swift in Sources */,
 				B9CD6FC929FF8F7B00EAF256 /* Stack+InorderTraversal.swift in Sources */,
