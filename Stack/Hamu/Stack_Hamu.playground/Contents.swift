@@ -67,3 +67,23 @@ class Solution3 {
         return stack.reduce(0, +)
     }
 }
+
+//MARK: - 1441. Build an Array With Stack Operations
+
+class Solution4 {
+    func buildArray(_ target: [Int], _ n: Int) -> [String] {
+        var result = [String]()
+        var currentNum = 1
+        for t in target {
+            while currentNum < t {
+                result.append("Push")
+                result.append("Pop")
+                currentNum += 1
+            }
+            result.append("Push")
+            currentNum += 1
+        }
+        return result
+    }
+}
+
