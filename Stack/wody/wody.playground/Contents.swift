@@ -93,3 +93,35 @@ func calPoints(_ operations: [String]) -> Int {
 
     return recordScore.reduce(0, +)
 }
+
+/*
+ https://leetcode.com/problems/build-an-array-with-stack-operations/
+ 1441. Build an Array With Stack Operations
+
+ 영어 지문 어려워요,...
+ 스택 방식으로 배열 만들기
+ 1. 일단 push
+ 2. 해당하지 않으면 pop
+ 3. 순환 중 target과 동일해지면 동작 중단하고 반환
+ */
+
+func buildArray(_ target: [Int], _ n: Int) -> [String] {
+    var result: [String] = []
+    var intResult: [Int] = []
+
+    for stream in 1...n {
+        if target.contains(stream) {
+            result.append("Push")
+            intResult.append(stream)
+        } else {
+            result.append("Push")
+            result.append("Pop")
+        }
+
+        if target == intResult {
+            break
+        }
+    }
+
+    return result
+}
