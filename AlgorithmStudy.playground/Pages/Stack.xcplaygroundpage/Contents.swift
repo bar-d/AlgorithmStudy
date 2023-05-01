@@ -64,3 +64,21 @@ class Solution4 {
         return result
     }
 }
+
+//MARK: - 2390. Removing Stars From a String
+
+class Solution5 {
+    func removeStars(_ s: String) -> String {
+        var result = [String]()
+        for char in s {
+            if char == "*" {
+                if result.last != "*" {
+                    result.removeLast()
+                }
+            } else {
+                result.append(String(char))
+            }
+        }
+        return result.joined()
+    }
+}
