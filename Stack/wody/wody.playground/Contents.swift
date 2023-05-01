@@ -58,3 +58,38 @@ func inorderTraversal(_ root: TreeNode?) -> [Int] {
     return result
 }
 
+/*
+ https://leetcode.com/problems/baseball-game/
+ 682. Baseball Game
+
+ 1. operations를 순회하며 각 계산법에 해당하는 string 조건문에 따라 연산
+ 2. 결과 합산하여 반환
+ */
+
+func calPoints(_ operations: [String]) -> Int {
+    var recordScore: [Int] = []
+
+    operations.forEach { operation in
+        if let num = Int(operation) {
+            recordScore.append(num)
+        }
+
+        // let invaildLastScore
+        if operation == "C" {
+            recordScore.popLast()
+        }
+
+        if operation == "D" {
+            let lastScore = recordScore.last ?? 0
+            recordScore.append(lastScore * 2)
+        }
+
+        if operation == "+" {
+            var copyRecordScore = recordScore
+            var plusScore = (copyRecordScore.popLast() ?? 0) + (copyRecordScore.popLast() ?? 0)
+            recordScore.append(plusScore)
+        }
+    }
+
+    return recordScore.reduce(0, +)
+}
