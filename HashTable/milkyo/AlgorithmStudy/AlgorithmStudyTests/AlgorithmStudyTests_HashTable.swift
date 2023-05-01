@@ -1,5 +1,5 @@
 //
-//  AlgorithmStudyTests.swift
+//  AlgorithmStudyTests_HashTable.swift
 //  AlgorithmStudyTests
 //
 //  Created by Milkyo on 4/20/23.
