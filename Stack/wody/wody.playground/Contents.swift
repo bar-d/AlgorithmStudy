@@ -33,3 +33,28 @@ func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
 
     return result
 }
+
+/*
+ https://leetcode.com/problems/binary-tree-inorder-traversal/
+ 94. Binary Tree Inorder Traversal
+
+ 중위 노드 탐색
+ 재귀 함수 사용
+ */
+
+func inorderTraversal(_ root: TreeNode?) -> [Int] {
+    var result: [Int] = []
+
+    func innerInorderTraversal(node: TreeNode?) {
+        guard let node = node else { return }
+
+        innerInorderTraversal(node: node.left)
+        result.append(node.val)
+        innerInorderTraversal(node: node.right)
+    }
+
+    innerInorderTraversal(node: root)
+
+    return result
+}
+
