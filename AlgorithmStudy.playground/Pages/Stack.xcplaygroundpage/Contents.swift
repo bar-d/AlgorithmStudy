@@ -44,3 +44,23 @@ class Solution3 {
         return points.reduce(0, +)
     }
 }
+
+//MARK: - 1441. Build an Array With Stack Operations
+
+class Solution4 {
+    func buildArray(_ target: [Int], _ n: Int) -> [String] {
+        var index = 0
+        var result = [String]()
+        
+        for i in 1...n {
+            if index == target.count { break }
+            result.append("Push")
+            if target[index] == i {
+                index += 1
+            } else {
+                result.append("Pop")
+            }
+        }
+        return result
+    }
+}
