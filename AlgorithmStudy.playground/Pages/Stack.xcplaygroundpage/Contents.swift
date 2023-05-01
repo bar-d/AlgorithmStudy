@@ -23,3 +23,24 @@ class Solution1 {
         return ans
     }
 }
+
+//MARK: - 682. Baseball Game
+
+class Solution3 {
+    func calPoints(_ operations: [String]) -> Int {
+        var points: [Int] = []
+        for operation in operations {
+            switch operation {
+            case "C":
+                points.removeLast()
+            case "D":
+                points.append(points.last! * 2)
+            case "+":
+                points.append(points[points.count-1] + points[points.count-2])
+            default:
+                points.append(Int(operation)!)
+            }
+        }
+        return points.reduce(0, +)
+    }
+}
