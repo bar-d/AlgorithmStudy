@@ -64,4 +64,22 @@ class AlgorithmStudyTests_Stack: XCTestCase {
         let result = solution.calPoints(["1","C"])
         XCTAssertEqual(result, 0)
     }
+    
+    // MARK: - Build an Array With Stack Operations
+    func test_Build_an_Array_With_Stack_Operations_Example1() {
+        let result = solution.buildArray([1,3], 3)
+        XCTAssertEqual(result, ["Push","Push","Pop","Push"])
+    }
+    
+    // MARK: - Build an Array With Stack Operations
+    func test_Build_an_Array_With_Stack_Operations_Example2() {
+        let result = solution.buildArray([1,2,3], 3)
+        XCTAssertEqual(result, ["Push","Push","Push"])
+    }
+    
+    // MARK: - Build an Array With Stack Operations
+    func test_Build_an_Array_With_Stack_Operations_Example3() {
+        let result = solution.buildArray([1,2], 4)
+        XCTAssertEqual(result, ["Push","Push"])
+    }
 }
