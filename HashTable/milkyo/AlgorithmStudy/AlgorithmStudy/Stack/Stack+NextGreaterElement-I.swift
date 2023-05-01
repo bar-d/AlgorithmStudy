@@ -8,6 +8,7 @@
 import Foundation
 
 extension Solution {
+    // https://leetcode.com/problems/next-greater-element-i/
     func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
         let nums2Count = nums2.count
         var result = [Int]()
