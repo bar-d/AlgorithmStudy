@@ -31,7 +31,6 @@ public class TreeNode {
     }
 }
 
-
 class Solution2 {
     func inorderTraversal(_ root: TreeNode?) -> [Int] {
         var result = [Int]()
@@ -44,5 +43,27 @@ class Solution2 {
         
         visit(node: root)
         return result
+    }
+}
+
+//MARK: - 682. Baseball Game
+
+class Solution3 {
+    func calPoints(_ operations: [String]) -> Int {
+        var stack = [Int]()
+        
+        operations.forEach { o in
+            switch o {
+            case "+":
+                let first = stack.popLast()!
+                let second = stack.last!
+                stack.append(first)
+                stack.append(first + second)
+            case "D": stack.append(stack.last! * 2)
+            case "C": stack.removeLast()
+            default: stack.append(Int(o)!)
+            }
+        }
+        return stack.reduce(0, +)
     }
 }
