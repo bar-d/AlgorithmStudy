@@ -82,4 +82,16 @@ class AlgorithmStudyTests_Stack: XCTestCase {
         let result = solution.buildArray([1,2], 4)
         XCTAssertEqual(result, ["Push","Push"])
     }
+    
+    // MARK: - Removing Stars From a String
+    func test_Removing_Stars_From_a_String_Example1() {
+        let result = solution.removeStars("leet**cod*e")
+        XCTAssertEqual(result, "lecoe")
+    }
+    
+    // MARK: - Removing Stars From a String
+    func test_Removing_Stars_From_a_String_Example2() {
+        let result = solution.removeStars("erase*****")
+        XCTAssertEqual(result, "")
+    }
 }
