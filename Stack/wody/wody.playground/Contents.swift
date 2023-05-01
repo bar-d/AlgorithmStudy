@@ -125,3 +125,27 @@ func buildArray(_ target: [Int], _ n: Int) -> [String] {
 
     return result
 }
+
+/*
+ https://leetcode.com/problems/removing-stars-from-a-string/
+ 2390. Removing Stars From a String
+
+ 1. 매개변수 s 순환하기
+ 2. *이 아니면 stack에 push
+ 3. *이면 popLast
+
+ */
+
+func removeStars(_ s: String) -> String {
+    var result: [String] = []
+    
+    for char in s {
+        if char == "*" {
+            result.popLast()
+        } else {
+            result.append(String(char))
+        }
+    }
+    
+    return result.joined()
+}
