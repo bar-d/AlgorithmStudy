@@ -69,3 +69,25 @@ class Solution3 {
         return true
     }
 }
+
+//MARK: - 451. Sort Characters By Frequency
+
+class Solution {
+    func frequencySort(_ s: String) -> String {
+        var dict = [Character:Int]()
+        var result = ""
+        
+        for s in s {
+            dict[s, default: 0] += 1
+        }
+        let sorted = dict.sorted(by: { $0.value > $1.value })
+        for (key, value) in sorted {
+            for _ in 0..<value {
+                result += String(key)
+            }
+        }
+        return result
+    }
+}
+
+//MARK: - 2352. Equal Row and Column Pairs
