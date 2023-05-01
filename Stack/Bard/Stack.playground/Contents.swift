@@ -63,3 +63,30 @@ func inorderTraversal(_ root: TreeNode?) -> [Int] {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/baseball-game/
+
+func calPoints(_ operations: [String]) -> Int {
+    var operandArray: [Int] = []
+    
+    for operation in operations {
+        if Int(operation) == nil {
+            if operation == "+" {
+                let lastOperand = operandArray.last!
+                let firstOperand = operandArray[operandArray.count - 2]
+                let newOperand = firstOperand + lastOperand
+                operandArray.append(newOperand)
+            } else if operation == "D" {
+                let lastOperand = operandArray.last!
+                let newOperand = lastOperand * 2
+                operandArray.append(newOperand)
+            } else if operation == "C" {
+                operandArray.removeLast()
+            }
+        } else {
+            operandArray.append(Int(operation)!)
+        }
+    }
+    
+    return operandArray.reduce(0, +)
+}
