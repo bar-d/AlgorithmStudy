@@ -1,3 +1,4 @@
+## 알고리즘 스터디
 # 알고리즘 스터디
 
 ## 개요 ✍️
@@ -43,24 +44,59 @@
 - Easy 3, Medium 2개 README.md 파일에 선정되어 있는 문제를 각 자신의 폴더에서 풀고 PR(월요일 자정까지)
 - 수요일 오후 8시 디코에서 스크럼
 - 수요일 스크럼 전까지 각 팀별로 팀원들의 코드 리뷰 후 approve 진행(1팀에서는 최소 1명, 2팀에서는 최소 2명)
+- 첫 문제를 풀고 PR을 우선 올린 후, 업데이트 되는 문제 계속 리뷰해주기
 
 ## 출석부 📖
 - 정상 출석: ✅, 지각: 🫥, 아픔: 🤒 ,결석: ❌, 야근: 😱
 ### 1팀
-|이름\날짜|4/19 20:00|4/26 20:00|||||||||||||
+|이름\날짜|4/19 20:00 HashTable|4/26 20:00|||||||||||||
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|바드|✅||||||||||||||
-|우디|✅||||||||||||||
-|크리스|🫥||||||||||||||
-|비비(5월 예정)|🤒||||||||||||||
+|바드|✅|✅|||||||||||||
+|우디|✅|😱|||||||||||||
+|크리스|🫥|❌|||||||||||||
+|비비(5월 예정)|🤒|❌|||||||||||||
 ---
 
 ### 2팀
 |이름\날짜|4/19 20:00|4/26 20:00|||||||||||||
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|스티븐(팀장)|✅||||||||||||||
-|써비|✅||||||||||||||
-|밀쿄|✅||||||||||||||
-|하무|❌||||||||||||||
+|스티븐(팀장)|✅|😱|||||||||||||
+|써비|✅|❌|||||||||||||
+|밀쿄|✅|😱|||||||||||||
+|하무|❌|✅|||||||||||||
 ---
 
+## HashTable 문제
+
+<details>
+<summary>접기/펼치기</summary>
+
+### easy    
+[count common words with one occurrence](https://leetcode.com/problems/count-common-words-with-one-occurrence)
+[count pairs of similar strings](https://leetcode.com/problems/count-pairs-of-similar-strings)
+[check distances between same letter](https://leetcode.com/problems/check-distances-between-same-letters)
+### medium
+[sort characters by frequency](https://leetcode.com/problems/sort-characters-by-frequency)
+[equal row and column pairs](https://leetcode.com/problems/equal-row-and-column-pairs)
+
+</details>
+
+## Stack 문제
+
+<details>
+<summary>접기/펼치기</summary>
+    
+### easy    
+[next greater element i](https://leetcode.com/problems/next-greater-element-i/)
+[binary tree inorder traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+[baseball game](https://leetcode.com/problems/baseball-game/)
+### medium
+[build an array with stack operations](https://leetcode.com/problems/build-an-array-with-stack-operations/)
+[removing stars from a string](https://leetcode.com/problems/removing-stars-from-a-string/) 
+</details>
+
+## Convention
+### PR convention
+`닉네임 - 주제 ex) bard - HashTable`
+### commit convention
+`문제 번호 - 문제 이름 ex) problem 1 - check distances between same letters`
