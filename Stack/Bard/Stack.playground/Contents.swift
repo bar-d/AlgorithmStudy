@@ -90,3 +90,31 @@ func calPoints(_ operations: [String]) -> Int {
     
     return operandArray.reduce(0, +)
 }
+
+// MARK: - https://leetcode.com/problems/build-an-array-with-stack-operations/
+
+func buildArray(_ target: [Int], _ n: Int) -> [String] {
+    var s: [Int] = []
+    var numberArray: [Int] = []
+    var commandArray: [String] = []
+    
+    for i in 1...n {
+        numberArray.append(i)
+    }
+    
+    for number in numberArray {
+        s.append(number)
+        commandArray.append("Push")
+        
+        if !target.contains(number) {
+            s.removeLast()
+            commandArray.append("Pop")
+        }
+        
+        if s == target {
+            break
+        }
+    }
+    
+    return commandArray
+}
