@@ -118,3 +118,19 @@ func buildArray(_ target: [Int], _ n: Int) -> [String] {
     
     return commandArray
 }
+
+// MARK: - https://leetcode.com/problems/removing-stars-from-a-string/
+
+func removeStars(_ s: String) -> String {
+    var array: [String] = []
+    
+    for i in s {
+        if i == "*" {
+            array.removeLast()
+        } else {
+            array.append(String(i))
+        }
+    }
+    
+    return array.joined()
+}
