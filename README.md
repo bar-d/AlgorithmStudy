@@ -45,26 +45,36 @@
 - 수요일 오후 8시 디코에서 스크럼
 - 수요일 스크럼 전까지 각 팀별로 팀원들의 코드 리뷰 후 approve 진행(1팀에서는 최소 1명, 2팀에서는 최소 2명)
 - 첫 문제를 풀고 PR을 우선 올린 후, 업데이트 되는 문제 계속 리뷰해주기
+- merge는 `Squash and merge`로 merge
+<details>
+<summary>접기/펼치기</summary>
+
+![](https://i.imgur.com/AMGibs0.png)
+
+</details>
+
+- issues에 `테마 - 문제 이름` issue에 해당 문제 코드만 올리기
 
 ## 출석부 📖
 - 정상 출석: ✅, 지각: 🫥, 아픔: 🤒 ,결석: ❌, 야근: 😱
 ### 1팀
-|이름\날짜|4/19 20:00 HashTable|4/26 20:00|||||||||||||
+|이름\날짜|4/19 20:00 HashTable|4/26 20:00 Stack|5/3 20:00 Sorting||||||||||||
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|바드|✅|✅|||||||||||||
-|우디|✅|😱|||||||||||||
-|크리스|🫥|❌|||||||||||||
-|비비(5월 예정)|🤒|❌|||||||||||||
+|바드|✅|✅|✅||||||||||||
+|우디|✅|😱|🫥||||||||||||
+|크리스|🫥|❌|✅||||||||||||
+|비비(5월 예정)|🤒|❌|✅||||||||||||
 ---
 
 ### 2팀
-|이름\날짜|4/19 20:00|4/26 20:00|||||||||||||
+|이름\날짜|4/19 20:00 HashTable|4/26 20:00 Stack|5/3 20:00 Sorting||||||||||||
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|스티븐(팀장)|✅|😱|||||||||||||
-|써비|✅|❌|||||||||||||
-|밀쿄|✅|😱|||||||||||||
-|하무|❌|✅|||||||||||||
+|스티븐(팀장)|✅|😱|😱||||||||||||
+|써비|✅|❌|✅||||||||||||
+|밀쿄|✅|😱|😱||||||||||||
+|하무|❌|✅|✅||||||||||||
 ---
+
 
 ## HashTable 문제
 
@@ -90,9 +100,25 @@
 [next greater element i](https://leetcode.com/problems/next-greater-element-i/)
 [binary tree inorder traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 [baseball game](https://leetcode.com/problems/baseball-game/)
+
 ### medium
 [build an array with stack operations](https://leetcode.com/problems/build-an-array-with-stack-operations/)
 [removing stars from a string](https://leetcode.com/problems/removing-stars-from-a-string/) 
+</details>
+
+## Sorting 문제
+
+<details>
+<summary>접기/펼치기</summary>
+    
+### easy    
+[split with minimum sum](https://leetcode.com/problems/split-with-minimum-sum/)
+[sort array by parity ii](https://leetcode.com/problems/sort-array-by-parity-ii/)
+[intersection or two arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
+
+### medium
+[sort integers by the power value](https://leetcode.com/problems/sort-integers-by-the-power-value/)
+[pancake sorting](https://leetcode.com/problems/pancake-sorting/) 
 </details>
 
 ## Convention
