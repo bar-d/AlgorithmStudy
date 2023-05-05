@@ -87,3 +87,17 @@ func sortArrayByParityII(_ nums: [Int]) -> [Int] {
 }
 
 print(sortArrayByParityII([4,2,5,7]))
+
+/*
+ https://leetcode.com/problems/intersection-of-two-arrays/
+ 349. Intersection of Two Arrays
+
+ 이미 있는걸 또 구현해야하다니...🧐
+ 그럼 이미 있는걸 써야지!
+ */
+
+func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+    return Array(Set(nums1).intersection(Set(nums2)))
+}
+
+print(intersection([4,9,5], [9,4,9,8,4]))
