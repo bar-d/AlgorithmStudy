@@ -101,3 +101,68 @@ func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
 }
 
 print(intersection([4,9,5], [9,4,9,8,4]))
+
+/*
+ https://leetcode.com/problems/sort-integers-by-the-power-value/
+ 1387. Sort Integers by The Power Value
+
+ * 문제 설명
+ 정수 x의 power는 다음 단계를 사용하여 x를 1로 변환하는 데 필요한 단계 수로 정의됩니다.
+
+ - x가 짝수이면 x = x / 2
+ - x가 홀수이면 x = 3 * x + 1
+
+ 예를 들어, x = 3의 power는 7입니다.
+ 왜냐하면 3은 1이 될 때까지 7단계가 필요합니다
+ (3 → 10 → 5 → 16 → 8 → 4 → 2 → 1).
+
+ 세 개의 정수 lo, hi 및 k가 주어집니다.
+ 범위 [lo, hi] 내의 모든 정수를 power 값의 오름차순으로 정렬하고,
+ 동일한 power 값을 가진 두 개 이상의 정수는 해당 정수들의 오름차순으로 정렬합니다.
+ 마지막으로, 정렬된 리스트에서 k번째 정수를 반환합니다.
+
+ 주어진 범위 [lo, hi] 내의 모든 정수 x는 이러한 단계를 사용하여 1로 변환될 것이며,
+ x의 power는 32비트 부호 있는 정수로 표현할 수 있습니다.
+
+ * 풀이 설계
+ 1. lo부터 hi 까지의 배열 nums가 있고 값 num을 순회한다.
+ 2. 순회하면서 num에 대한 power value를 구하고 딕셔너리에 저장한다.
+ 3. power value 딕셔너리의 value를 오름차순으로 정렬, 만약 value가 같다면 key의 오름차순 정렬
+ 4. 정렬된 딕셔너리의 key만 map
+ 5. 4번의 배열에서 k-1 인덱스 값 반환
+
+ */
+func getKth(_ lo: Int, _ hi: Int, _ k: Int) -> Int {
+
+    var powerValues: [Int: Int] = [:]
+
+    func power(value: Int, count: Int = 0) -> (value: Int, count: Int) {
+        if value == 1 {
+            return (value, count)
+        }
+
+        if value.isEven {
+            return power(value: value / 2, count: count + 1)
+        } else {
+            return power(value: (3 * value) + 1, count: count + 1)
+        }
+    }
+
+    for num in lo...hi {
+        let powerValue = power(value: num)
+        powerValues[num] = powerValue.count
+    }
+
+    let sortedPowerValues = powerValues
+        .sorted {
+            if $0.value == $1.value {
+                return $0.key < $1.key
+            }
+            return $0.value < $1.value
+        }
+        .map { $0.key }
+
+    return sortedPowerValues[k-1]
+}
+
+print(getKth(1, 1000, 777))
