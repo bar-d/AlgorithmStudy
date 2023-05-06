@@ -166,3 +166,37 @@ func getKth(_ lo: Int, _ hi: Int, _ k: Int) -> Int {
 }
 
 print(getKth(1, 1000, 777))
+
+/*
+ https://leetcode.com/problems/pancake-sorting/
+ 969. Pancake Sorting
+
+ 펜케이크 알고리즘은 가장 큰 숫자부터 차례대로 정렬하는 알고리즘
+ 가장 큰 숫자의 위치를 찾아 가장 맨 앞으로 보내고(뒤집기), 가장 맨 뒤로 보낸다(뒤집기)
+ */
+let testCase = [3,2,1,4]
+
+func pancakeSort(_ arr: [Int]) -> [Int] {
+    var result: [Int] = []
+    var tempArray = arr
+
+    // 가장 큰 숫자대로 차례대로 정렬
+    for num in stride(from: tempArray.count, to: 0, by: -1) {
+        let targetIndex = tempArray.firstIndex(of: num)!
+
+        if targetIndex != num - 1 {
+            // tempArray에서 가장 큰 숫자의 index가 이미 정렬되어 있지 않을 때
+            if targetIndex != 0 {
+                // targetIndex가 가장 앞에 있지 않은 경우 앞으로 보내준다.
+                result.append(targetIndex + 1)
+                tempArray = Array(tempArray[0...(targetIndex)]).reversed() + tempArray[(targetIndex+1)...]
+            }
+            result.append(num)
+            tempArray = Array(tempArray[0...(num-1)]).reversed() + tempArray[num...]
+        }
+    }
+
+    return result
+}
+
+print(pancakeSort( testCase))
