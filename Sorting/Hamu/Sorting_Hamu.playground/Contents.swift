@@ -34,3 +34,10 @@ class Solution2 {
     }
 }
 
+//MARK: - 349. Intersection of Two Arrays
+
+class Solution3 {
+    func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        return Array(Set(nums1).intersection(Set(nums2)))
+    }
+}
