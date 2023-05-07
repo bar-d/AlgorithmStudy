@@ -47,6 +47,24 @@ class Solution {
 
 // MARK: - Problem 3
 
+class Solution {
+    func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        var result: [Int] = []
+        let sortedNums2 = nums2.sorted()
+
+        for i in 0..<nums1.count {
+            if sortedNums2.count != 0 {
+                if sortedNums2.contains(nums1[i]) {
+                    result.append(nums1[i])
+                    continue
+                }
+            }
+        }
+
+        return Array(Set(result))
+    }
+}
+
 
 
 // 1387. Sort Integers by The Power Value
