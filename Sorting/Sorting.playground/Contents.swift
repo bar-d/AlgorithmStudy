@@ -72,6 +72,29 @@ class Solution {
 
 // MARK: - Problem 4
 
+class Solution {
+    func getKth(_ lo: Int, _ hi: Int, _ k: Int) -> Int {
+
+        (lo...hi)
+            .map { incomeValue -> (k: Int, v: Int) in
+                var key = incomeValue
+                var count = 0
+
+                while key != 1 {
+                    count += 1
+                    if key % 2 == 0 {
+                        key = key / 2
+                    } else {
+                        key = 3 * key + 1
+                    }
+                }
+
+                return (incomeValue, count)
+            }
+            .sorted(by: { $0.v < $1.v })[k - 1].k
+    }
+}
+
 
 // 969. Pancake Sorting
 // https://leetcode.com/problems/pancake-sorting/
