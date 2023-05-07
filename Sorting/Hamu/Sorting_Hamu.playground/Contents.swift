@@ -41,3 +41,40 @@ class Solution3 {
         return Array(Set(nums1).intersection(Set(nums2)))
     }
 }
+
+//MARK: - 1387. Sort Integers by The Power Value
+
+class Solution4 {
+    func getKth(_ lo: Int, _ hi: Int, _ k: Int) -> Int {
+        return Array(lo...hi)
+            .map { num -> (Int, Int) in
+                var temp = num, count = 0
+                while temp != 1 {
+                    count += 1
+                    if temp % 2 == 0 { temp /= 2 }
+                    else { temp = 3 * temp + 1 }
+                }
+                return (num, count)
+            }
+            .sorted {
+                if $0.1 == $1.1 { return $0.0 < $1.0 }
+                return $0.1 < $1.1
+            }[k - 1].0
+    }
+}
+func getKth(_ lo: Int, _ hi: Int, _ k: Int) -> Int {
+    return Array(lo...hi)
+        .map { num -> (Int, Int) in
+            var temp = num, count = 0
+            while temp != 1 {
+                count += 1
+                if temp % 2 == 0 { temp /= 2 }
+                else { temp = 3 * temp + 1 }
+            }
+            return (num, count)
+        }
+        .sorted {
+            if $0.1 == $1.1 { return $0.0 < $1.0 }
+            return $0.1 < $1.1
+        }[k - 1].0
+}
