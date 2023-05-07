@@ -20,3 +20,17 @@ class Solution1 {
         return Int(sum1)! + Int(sum2)!
     }
 }
+
+//MARK: - 922. Sort Array By Parity II
+
+class Solution2 {
+    func sortArrayByParityII(_ nums: [Int]) -> [Int] {
+        var splitNum = Array(repeating: [Int](), count: 2)
+        nums.forEach { splitNum[$0 % 2].append($0) }
+        
+        return Array(0..<nums.count)
+            .map { splitNum[$0 % 2].popLast() }
+            .compactMap { $0 }
+    }
+}
+
