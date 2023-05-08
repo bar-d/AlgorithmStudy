@@ -53,3 +53,45 @@ func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
     
     return Array(nums1Set.intersection(nums2Set))
 }
+
+// MARK: - https://leetcode.com/problems/sort-integers-by-the-power-value/
+
+func getKth(_ lo: Int, _ hi: Int, _ k: Int) -> Int {
+    var dictionary: [Int: Int] = [:]
+    
+    for i in lo...hi {
+        var count = 0
+        var key = i
+        
+        while key != 1 {
+            key = transform(key)
+            count += 1
+        }
+        
+        dictionary[i] = count
+    }
+    
+    let sortedArray = dictionary
+        .sorted {
+            if $0.value == $1.value {
+                return $0.key < $1.key
+            } else {
+                return $0.value < $1.value
+            }
+        }
+        .map { $0.key }
+    
+    return sortedArray[k - 1]
+}
+
+func transform(_ int: Int) -> Int {
+    var answer = int
+    
+    if answer % 2 == 0 {
+        answer = answer / 2
+    } else {
+        answer = 3 * answer + 1
+    }
+    
+    return answer
+}
