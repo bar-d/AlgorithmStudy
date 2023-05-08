@@ -44,3 +44,12 @@ func sortArrayByParityII(_ nums: [Int]) -> [Int] {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/intersection-of-two-arrays/
+
+func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+    var nums1Set = Set(nums1)
+    var nums2Set = Set(nums2)
+    
+    return Array(nums1Set.intersection(nums2Set))
+}
