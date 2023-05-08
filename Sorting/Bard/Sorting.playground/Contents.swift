@@ -21,3 +21,26 @@ func splitNum(_ num: Int) -> Int {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/sort-array-by-parity-ii/
+
+func sortArrayByParityII(_ nums: [Int]) -> [Int] {
+    var evenNums: [Int] = []
+    var oddNums: [Int] = []
+    var result: [Int] = []
+    
+    for num in nums {
+        if num % 2 == 0 {
+            evenNums.append(num)
+        } else {
+            oddNums.append(num)
+        }
+    }
+    
+    for i in 0..<evenNums.count {
+        result.append(evenNums[i])
+        result.append(oddNums[i])
+    }
+    
+    return result
+}
