@@ -3,6 +3,23 @@
 
 // MARK: - Problem 1
 
+class Solution {
+    func splitNum(_ num: Int) -> Int {
+        var firstStr = ""
+        var secondStr = ""
+        let separatedDigitArray = Array(String(num)).sorted()
+
+        for i in 0..<separatedDigitArray.count {
+            if i % 2 == 0 {
+                firstStr += String(separatedDigitArray[i])
+            } else {
+                secondStr += String(separatedDigitArray[i])
+            }
+        }
+
+        return Int(firstStr)! + Int(secondStr)!
+    }
+}
 
 // 922. Sort Array By Parity II
 // https://leetcode.com/problems/sort-array-by-parity-ii/description/
