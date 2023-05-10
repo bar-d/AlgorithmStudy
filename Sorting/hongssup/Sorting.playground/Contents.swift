@@ -133,3 +133,32 @@ class Solution4_2 {
     }
 }
 
+//MARK: - 969. Pancake Sorting
+
+class Solution5 {
+    func pancakeSort(_ arr: [Int]) -> [Int] {
+        var sorted = arr.sorted()
+        var result = [Int]()
+        var arr = arr
+        
+        while arr.count > 1 {
+            if arr == sorted { return result }
+            
+            let index = arr.firstIndex(of: arr.count)!
+            
+            if index != 0 {
+                var temp = Array(arr[0...index].reversed())
+                temp.append(contentsOf: arr[index+1..<arr.count])
+                result.append(index+1)
+                arr = temp
+            }
+            result.append(arr.count)
+            
+            arr.reverse()
+            
+            arr.popLast()
+            sorted.popLast()
+        }
+        return result
+    }
+}
