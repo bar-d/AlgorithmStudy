@@ -83,10 +83,13 @@
 
 ### easy    
 [count common words with one occurrence](https://leetcode.com/problems/count-common-words-with-one-occurrence)
+
 [count pairs of similar strings](https://leetcode.com/problems/count-pairs-of-similar-strings)
+
 [check distances between same letter](https://leetcode.com/problems/check-distances-between-same-letters)
 ### medium
 [sort characters by frequency](https://leetcode.com/problems/sort-characters-by-frequency)
+
 [equal row and column pairs](https://leetcode.com/problems/equal-row-and-column-pairs)
 
 </details>
@@ -98,11 +101,14 @@
     
 ### easy    
 [next greater element i](https://leetcode.com/problems/next-greater-element-i/)
+
 [binary tree inorder traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+
 [baseball game](https://leetcode.com/problems/baseball-game/)
 
 ### medium
 [build an array with stack operations](https://leetcode.com/problems/build-an-array-with-stack-operations/)
+
 [removing stars from a string](https://leetcode.com/problems/removing-stars-from-a-string/) 
 </details>
 
@@ -113,12 +119,34 @@
     
 ### easy    
 [split with minimum sum](https://leetcode.com/problems/split-with-minimum-sum/)
+
 [sort array by parity ii](https://leetcode.com/problems/sort-array-by-parity-ii/)
+
 [intersection or two arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
+
 
 ### medium
 [sort integers by the power value](https://leetcode.com/problems/sort-integers-by-the-power-value/)
+
 [pancake sorting](https://leetcode.com/problems/pancake-sorting/) 
+</details>
+
+## Greedy 문제
+
+<details>
+<summary>접기/펼치기</summary>
+    
+### easy    
+[two furthest houses with different colors](https://leetcode.com/problems/two-furthest-houses-with-different-colors/)
+
+[minimum number of operations to convert time](https://leetcode.com/problems/minimum-number-of-operations-to-convert-time/)
+
+[k items with the maximum sum](https://leetcode.com/problems/k-items-with-the-maximum-sum/)
+
+### medium
+[minimum number of swaps to make the string balanced](https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/)
+
+[reduce array size to the half](https://leetcode.com/problems/reduce-array-size-to-the-half/)
 </details>
 
 ## Convention
