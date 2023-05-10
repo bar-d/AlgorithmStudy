@@ -95,3 +95,24 @@ func transform(_ int: Int) -> Int {
     
     return answer
 }
+
+// MARK: - https://leetcode.com/problems/pancake-sorting/
+
+func pancakeSort(_ arr: [Int]) -> [Int] {
+    
+    guard arr.count > 1 else {
+        return []
+    }
+    
+    let i = arr.firstIndex(of: arr.count)!
+    
+    guard i != arr.count - 1 else {
+        return pancakeSort(arr.dropLast())
+    }
+    
+    guard i != 0 else {
+        return [arr.count] + pancakeSort(Array(arr.dropFirst().reversed()))
+    }
+    
+    return [i + 1, arr.count] + pancakeSort(arr[(i + 1)...].reversed() + arr[..<i])
+}
