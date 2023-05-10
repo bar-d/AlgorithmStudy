@@ -16,6 +16,51 @@ class Solution1 {
         return Int(num1)! + Int(num2)!
     }
 }
+
+//MARK: - 922. Sort Array By Parity II
+
+class Solution2_1 {
+    func sortArrayByParityII(_ nums: [Int]) -> [Int] {
+        var even = [Int]()
+        var odd = [Int]()
+
+        for num in nums {
+            if num % 2 == 0 {
+                even.append(num)
+            } else {
+                odd.append(num)
+            }
+        }
+
+        var result = [Int]()
+        for i in 0..<even.count {
+            result.append(even[i])
+            result.append(odd[i])
+        }
+
+        return result
+    }
+}
+
+class Solution2_2 {
+    func sortArrayByParityII(_ nums: [Int]) -> [Int] {
+        var result = Array(repeating:0, count:nums.count)
+        var even = 0
+        var odd = 1
+        
+        for num in nums{
+            if num % 2 == 0{
+                result[even] = num
+                even += 2
+            } else {
+                result[odd] = num
+                odd += 2
+            }
+        }
+        return result
+    }
+}
+
 //MARK: - 349. Intersection of Two Arrays
 
 class Solution3_1 {
