@@ -112,3 +112,45 @@ func convertTime(_ current: String, _ correct: String) -> Int {
 }
 
 print(convertTime("02:30", "04:35"))
+
+/*
+ https://leetcode.com/problems/k-items-with-the-maximum-sum/
+ 2600. K Items With the Maximum Sum
+
+ 합계가 최대인 K 항목
+
+ numOnes에는 어레이에 1이 몇 개 있는지 나타냄
+ numZeros에는 어래이에 0이 몇 개 있는지 나타냄
+ numNegOnes는 어레이에 -1이 몇 개 있는지 나타냄
+ k는 각 num이 사용되는 갯수를 나타냄
+
+ k에 맞춰 num을 조합해 만들 수 있는 최대 Int를 반환하면 됨
+ */
+
+func kItemsWithMaximumSum(_ numOnes: Int, _ numZeros: Int, _ numNegOnes: Int, _ k: Int) -> Int {
+    var result = 0
+
+    var numOnesArray = Array(repeating: 1, count: numOnes)
+    var numZerosArray = Array(repeating: 0, count: numZeros)
+    var numNegOnesArray = Array(repeating: -1, count: numNegOnes)
+
+    for _ in 0..<k {
+        if let one = numOnesArray.popLast() {
+            result += one
+            continue
+        }
+
+        if numZerosArray.popLast() != nil {
+            continue
+        }
+
+        if let neg = numNegOnesArray.popLast() {
+            result += neg
+            continue
+        }
+    }
+
+    return result
+}
+
+print(kItemsWithMaximumSum(3, 2, 0, 2))
