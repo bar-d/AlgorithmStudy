@@ -15,6 +15,8 @@
 		B98F12562A124F70000EF2ED /* Greedy+ConvertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F12542A124F2E000EF2ED /* Greedy+ConvertTime.swift */; };
 		B98F12582A1252D5000EF2ED /* Greedy+kItemsWithMaximumSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F12572A1252D5000EF2ED /* Greedy+kItemsWithMaximumSum.swift */; };
 		B98F12592A12531C000EF2ED /* Greedy+kItemsWithMaximumSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F12572A1252D5000EF2ED /* Greedy+kItemsWithMaximumSum.swift */; };
+		B98F125B2A125BE3000EF2ED /* Greedy+minSetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F125A2A125BE3000EF2ED /* Greedy+minSetSize.swift */; };
+		B98F125C2A125F86000EF2ED /* Greedy+minSetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F125A2A125BE3000EF2ED /* Greedy+minSetSize.swift */; };
 		B9CD6FC329FF861D00EAF256 /* Stack+NextGreaterElement-I.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD6FC229FF861D00EAF256 /* Stack+NextGreaterElement-I.swift */; };
 		B9CD6FC429FF863000EAF256 /* Stack+NextGreaterElement-I.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD6FC229FF861D00EAF256 /* Stack+NextGreaterElement-I.swift */; };
 		B9CD6FC629FF888100EAF256 /* AlgorithmStudyTests_Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD6FC529FF888100EAF256 /* AlgorithmStudyTests_Stack.swift */; };
@@ -59,6 +61,7 @@
 		B98F12512A124B32000EF2ED /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		B98F12542A124F2E000EF2ED /* Greedy+ConvertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Greedy+ConvertTime.swift"; sourceTree = "<group>"; };
 		B98F12572A1252D5000EF2ED /* Greedy+kItemsWithMaximumSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Greedy+kItemsWithMaximumSum.swift"; sourceTree = "<group>"; };
+		B98F125A2A125BE3000EF2ED /* Greedy+minSetSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Greedy+minSetSize.swift"; sourceTree = "<group>"; };
 		B9CD6FC229FF861D00EAF256 /* Stack+NextGreaterElement-I.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack+NextGreaterElement-I.swift"; sourceTree = "<group>"; };
 		B9CD6FC529FF888100EAF256 /* AlgorithmStudyTests_Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmStudyTests_Stack.swift; sourceTree = "<group>"; };
 		B9CD6FC729FF8DAA00EAF256 /* Stack+InorderTraversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stack+InorderTraversal.swift"; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 				B98F124D2A124AF4000EF2ED /* Greedy+MaxDistance.swift */,
 				B98F12542A124F2E000EF2ED /* Greedy+ConvertTime.swift */,
 				B98F12572A1252D5000EF2ED /* Greedy+kItemsWithMaximumSum.swift */,
+				B98F125A2A125BE3000EF2ED /* Greedy+minSetSize.swift */,
 			);
 			path = Greedy;
 			sourceTree = "<group>";
@@ -260,6 +264,7 @@
 				B9E2F78329F502EA00E7997A /* Solution+similarPairs.swift in Sources */,
 				B9E2F78029F4FD0500E7997A /* Solution+equalPairs.swift in Sources */,
 				B9CD6FC329FF861D00EAF256 /* Stack+NextGreaterElement-I.swift in Sources */,
+				B98F125B2A125BE3000EF2ED /* Greedy+minSetSize.swift in Sources */,
 				B98F124E2A124AF4000EF2ED /* Greedy+MaxDistance.swift in Sources */,
 				B9CD6FD129FFD73300EAF256 /* Stack+removeStars.swift in Sources */,
 				B9CD6FCB29FF944400EAF256 /* Stack+BaseballGame.swift in Sources */,
@@ -291,6 +296,7 @@
 				B9D4A8F429F2C63100B67120 /* Solution+frequencySort.swift in Sources */,
 				B98F12592A12531C000EF2ED /* Greedy+kItemsWithMaximumSum.swift in Sources */,
 				B9D4A8E429F1613300B67120 /* AlgorithmStudyTests_HashTable.swift in Sources */,
+				B98F125C2A125F86000EF2ED /* Greedy+minSetSize.swift in Sources */,
 				B9CD6FC929FF8F7B00EAF256 /* Stack+InorderTraversal.swift in Sources */,
 				B98F12502A124B10000EF2ED /* AlgorithmStudyTests_Greedy.swift in Sources */,
 				B9CD6FCF29FFA70600EAF256 /* Stack+buildArray.swift in Sources */,

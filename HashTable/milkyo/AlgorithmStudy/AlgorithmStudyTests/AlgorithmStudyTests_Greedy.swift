@@ -48,4 +48,14 @@ class AlgorithmStudyTests_Greedy: BaseTestCase {
         let result = solution.kItemsWithMaximumSum(6, 6, 6, 13)
         XCTAssertEqual(result, 5)
     }
+    
+    func test_Reduce_Array_Size_to_The_Half_Example1() {
+        let result = solution.minSetSize([3,3,3,3,5,5,5,2,2,7])
+        XCTAssertEqual(result, 2)
+    }
+    
+    func test_Reduce_Array_Size_to_The_Half_Example2() {
+        let result = solution.minSetSize([7,7,7,7,7,7])
+        XCTAssertEqual(result, 1)
+    }
 }
