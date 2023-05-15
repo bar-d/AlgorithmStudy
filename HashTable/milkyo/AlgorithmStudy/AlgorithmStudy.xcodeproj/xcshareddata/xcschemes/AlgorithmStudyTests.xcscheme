@@ -23,6 +23,11 @@
                BlueprintName = "AlgorithmStudyTests"
                ReferencedContainer = "container:AlgorithmStudy.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "BaseTestCase">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
