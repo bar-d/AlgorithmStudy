@@ -154,3 +154,83 @@ func kItemsWithMaximumSum(_ numOnes: Int, _ numZeros: Int, _ numNegOnes: Int, _ 
 }
 
 print(kItemsWithMaximumSum(3, 2, 0, 2))
+
+/*
+ https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/
+ 1963. Minimum Number of Swaps to Make the String Balanced
+
+ 문자열 균형을 유지하기 위한 최소 스왑의 수
+
+ 균형의 조건
+ - 비어있는 문자열
+ - AB로 표현할 수 있으며 A와 B 모두 균형잡힌 문자열
+ - [C]로 표현될 수 있는 문자열
+
+
+
+ */
+
+func minSwaps(_ s: String) -> Int {
+    var array = Array(s)
+    var balancedArray: [Character] = []
+    var result = 0
+
+    for i in 0..<array.count {
+        if array[i] == "[" {
+            balancedArray.append(array[i])
+        } else if !balancedArray.isEmpty {
+            balancedArray.popLast()
+        } else {
+            let closeChar = array.firstIndex(of: "]") ?? 0
+            array.swapAt(i, closeChar)
+            result += 1
+            balancedArray.append(array[i])
+        }
+    }
+
+    return result
+}
+
+/*
+ https://leetcode.com/problems/reduce-array-size-to-the-half/
+ 1338. Reduce Array Size to The Half
+ 어레이 크기를 절반으로 줄이기
+
+ 배열 정수의 절반 이상이 제거되도록 하는 집합의 최소 크기를 반환
+
+ 1. Set으로 조합 산출 elements
+ 2. element별 원소 갯수 반환
+ 3. count가 절반 이하가 될 때 까지 가장 큰 원소부터 제거
+ 3. 조합의 최소 크기 반환
+ */
+
+func minSetSize(_ arr: [Int]) -> Int {
+    let targetCount = arr.count / 2
+    let elements = Array(Set(arr))
+    var elementsCount: [Int] = []
+    var resultElements: [Int] = []
+
+    // 각 element별 갯수
+    for element in elements {
+        let count = arr.filter { $0 == element }.count
+        elementsCount.append(count)
+    }
+
+    elementsCount.sort(by: >)
+
+    var testingCount = arr.count
+
+    for count in elementsCount {
+        testingCount -= count
+        resultElements.append(count)
+
+        if testingCount <= targetCount {
+            testingCount = arr.count
+            break
+        }
+    }
+
+    return resultElements.count
+}
+
+print("### minSetSize: \(minSetSize([3,3,3,3,5,5,5,2,2,7]))")
