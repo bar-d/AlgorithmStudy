@@ -54,3 +54,28 @@ func convertTime(_ current: String, _ correct: String) -> Int {
     
     return count
 }
+
+// MARK: - https://leetcode.com/problems/k-items-with-the-maximum-sum/
+
+func kItemsWithMaximumSum(_ numOnes: Int, _ numZeros: Int, _ numNegOnes: Int, _ k: Int) -> Int {
+    var numArray: [Int] = []
+    var result = 0
+    
+    for _ in 0..<numOnes {
+        numArray.append(1)
+    }
+    
+    for _ in 0..<numZeros {
+        numArray.append(0)
+    }
+    
+    for _ in 0..<numNegOnes {
+        numArray.append(-1)
+    }
+    
+    for i in 0..<k {
+        result += numArray[i]
+    }
+    
+    return result
+}
