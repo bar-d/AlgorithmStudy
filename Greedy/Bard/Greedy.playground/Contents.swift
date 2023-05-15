@@ -79,3 +79,22 @@ func kItemsWithMaximumSum(_ numOnes: Int, _ numZeros: Int, _ numNegOnes: Int, _ 
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/
+
+func minSwaps(_ s: String) -> Int {
+    let arr = Array(s)
+    var result = 0
+    var count = 0
+    
+    for ch in arr {
+        if ch == "]" {
+            count += 1
+        } else {
+            count -= 1
+        }
+        result = max(result, count)
+    }
+    
+    return (result + 1) / 2
+}
