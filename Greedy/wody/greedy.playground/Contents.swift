@@ -206,31 +206,27 @@ func minSwaps(_ s: String) -> Int {
 
 func minSetSize(_ arr: [Int]) -> Int {
     let targetCount = arr.count / 2
-    let elements = Array(Set(arr))
-    var elementsCount: [Int] = []
-    var resultElements: [Int] = []
+    var numDict: [Int: Int] = [:]
+    var result = 0
 
-    // 각 element별 갯수
-    for element in elements {
-        let count = arr.filter { $0 == element }.count
-        elementsCount.append(count)
+    for num in arr {
+        numDict[num, default: 0] += 1
     }
 
-    elementsCount.sort(by: >)
+    let sortedArrCounts = numDict.sorted(by: { $0.value > $1.value })
 
-    var testingCount = arr.count
+    var arrCount = arr.count
 
-    for count in elementsCount {
-        testingCount -= count
-        resultElements.append(count)
+    for (_, count) in sortedArrCounts {
+        arrCount -= count
+        result += 1
 
-        if testingCount <= targetCount {
-            testingCount = arr.count
+        if arrCount <= targetCount {
             break
         }
     }
 
-    return resultElements.count
+    return result
 }
 
 print("### minSetSize: \(minSetSize([3,3,3,3,5,5,5,2,2,7]))")
