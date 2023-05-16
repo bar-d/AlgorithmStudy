@@ -1,7 +1,36 @@
 // MARK: - Problem 1
-// 2578. Split With Minimum Sum
-// https://leetcode.com/problems/split-with-minimum-sum/
+// 2078. Two Furthest Houses With Different Colors
+// https://leetcode.com/problems/two-furthest-houses-with-different-colors/
+class Solution {
+    func maxDistance(_ colors: [Int]) -> Int {
+        var max_distance = 0
+        var distance = 0
+        guard let first = colors.first, let last = colors.last else {
+            return 0
+        }
+        
+        if first != last {
+            return colors.count - 1
+        }
+        else
+        {
+            for i in 0..<colors.count {
+                if colors[i] != colors[colors.count - 1] {
+                    max_distance = max(max_distance, colors.count - 1 - i)
+                    break
+                }
+            }
 
+            for i in 0..<colors.count {
+                if colors[colors.count - 1 - i] != colors[0] {
+                    max_distance = max(max_distance, colors.count - 1 - i)
+                    break
+                }
+            }
+        }
+        return max_distance
+    }
+}
 
 // MARK: - Problem 2
 // 2224. Minimum Number of Operations to Convert Time
