@@ -40,3 +40,23 @@ class Solution2 {
         return count
     }
 }
+
+//2600. K Items With the Maximum Sum
+class Solution3 {
+    func kItemsWithMaximumSum(_ numOnes: Int, _ numZeros: Int, _ numNegOnes: Int, _ k: Int) -> Int {
+        var k = k, result = 0
+        let map = [0 : 1, 1 : 0, 2 : -1]
+        for (index, num) in [numOnes, numZeros, numNegOnes].enumerated() {
+            if k == 0 { break }
+            k -= num
+            if k >= 0 {
+                result += map[index]! * num
+            } else if k < 0 {
+                result += map[index]! * (num - abs(k))
+                break
+            }
+        }
+        
+        return result
+    }
+}
