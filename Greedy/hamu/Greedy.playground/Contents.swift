@@ -78,3 +78,28 @@ class Solution4 {
         return (right + 1)/2
     }
 }
+
+
+//1338. Reduce Array Size to The Half
+class Solution5 {
+    func minSetSize(_ arr: [Int]) -> Int {
+        let arrSet = Array(Set(arr))
+        var arrCountMap = [Int: Int]()
+        var arrTuple = [(Int, Int)]()
+        arr.forEach { arrCountMap[$0, default: 0] += 1 }
+        arrCountMap.forEach { key, value in
+            arrTuple.append((key, value))
+        }
+        arrTuple.sort { $0.1 > $1.1 }
+        var result = 0, sum = 0
+        for (num, count) in arrTuple {
+            sum += count
+            result += 1
+            if (arr.count - sum) <= (arr.count / 2) {
+                return result
+            }
+        }
+        
+        return 0
+    }
+}
