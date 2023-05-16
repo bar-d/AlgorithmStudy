@@ -60,3 +60,21 @@ class Solution3 {
         return result
     }
 }
+
+//1963. Minimum Number of Swaps to Make the String Balanced
+class Solution4 {
+    func minSwaps(_ s: String) -> Int {
+        var s = Array(s), left = 0, right = 0
+
+        s.forEach { c in
+            switch c {
+                case "]":
+                    if left > 0 { left -= 1 }
+                    else { right += 1 }
+                default:
+                    left += 1
+            }
+        }
+        return (right + 1)/2
+    }
+}
