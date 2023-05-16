@@ -92,7 +92,22 @@ class Solution {
 // MARK: - Problem 4
 // 1963. Minimum Number of Swaps to Make the String Balanced
 // https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/
-
+class Solution {
+    func minSwaps(_ s: String) -> Int {
+        let strArray = Array(s)
+        var result = 0
+        var count = 0
+        for str in strArray {
+            if str == "]" {
+                count += 1
+            } else {
+                count -= 1
+            }
+            result = max(result, count)
+        }
+        return (result + 1) / 2
+    }
+}
 
 // MARK: - Problem 5
 // 1338. Reduce Array Size to The Half
