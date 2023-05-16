@@ -35,6 +35,30 @@ class Solution {
 // MARK: - Problem 2
 // 2224. Minimum Number of Operations to Convert Time
 // https://leetcode.com/problems/minimum-number-of-operations-to-convert-time/
+class Solution {
+    func convertTime(_ current: String, _ correct: String) -> Int {
+        var current_time = current.components(separatedBy: ":").map{ Int(String($0))! }
+        var correct_time = correct.components(separatedBy: ":").map{ Int(String($0))! }
+        current_time[0] *= 60
+        correct_time[0] *= 60
+
+        var remainder = abs(current_time.reduce(0, +) - correct_time.reduce(0, +))
+        var res = 0
+        
+        res += remainder / 60
+        remainder %= 60
+
+        res += remainder / 15
+        remainder %= 15
+
+        res += remainder / 5
+        remainder %= 5
+
+        res += remainder
+
+        return res
+    }
+}
 
 
 // MARK: - Problem 3
