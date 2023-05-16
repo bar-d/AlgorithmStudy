@@ -98,3 +98,32 @@ func minSwaps(_ s: String) -> Int {
     
     return (result + 1) / 2
 }
+
+// MARK: - https://leetcode.com/problems/reduce-array-size-to-the-half/description/
+
+func minSetSize(_ arr: [Int]) -> Int {
+    var dictionary: [Int:Int] = [:]
+    var count = 0
+    var total = arr.count
+    
+    for i in arr {
+        if dictionary[i] == nil {
+            dictionary[i] = 1
+        } else {
+            dictionary[i]! += 1
+        }
+    }
+    
+    let sortedArray = dictionary.values.sorted(by: { $0 > $1 })
+
+    for i in sortedArray{
+        count += 1
+        total -= i
+        
+        if arr.count / 2 >= total {
+            break
+        }
+    }
+    
+    return count
+}
