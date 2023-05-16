@@ -37,3 +37,23 @@ class Solution2 {
         return result
     }
 }
+
+//MARK: - 2600. K Items With the Maximum Sum
+
+class Solution3_1 {
+    func kItemsWithMaximumSum(_ numOnes: Int, _ numZeros: Int, _ numNegOnes: Int, _ k: Int) -> Int {
+        return min(k, numOnes) - max(0, k - numOnes - numZeros)
+    }
+}
+
+class Solution3_2 {
+    func kItemsWithMaximumSum(_ numOnes: Int, _ numZeros: Int, _ numNegOnes: Int, _ k: Int) -> Int {
+        if numOnes >= k {
+            return k
+        } else if numOnes + numZeros >= k {
+            return numOnes
+        } else {
+            return numOnes - (k - numOnes - numZeros)
+        }
+    }
+}
