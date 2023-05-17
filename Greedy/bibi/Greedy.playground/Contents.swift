@@ -77,3 +77,27 @@ class Solution4 {
         return swaps
     }
 }
+
+// problem 5 - 1338. Reduce Array Size to The Half
+class Solution5 {
+    func minSetSize(_ arr: [Int]) -> Int {
+        
+        var numberCounts = [Int: Int]()
+        
+        for num in arr {
+            numberCounts[num] = numberCounts[num, default: 0] + 1
+        }
+        
+        let frequencies = numberCounts.values.sorted(by: >)
+        
+        var remainingCount = arr.count / 2
+        var index = 0
+        
+        while remainingCount > 0 {
+            remainingCount -= frequencies[index]
+            index += 1
+        }
+        
+        return index
+    }
+}
