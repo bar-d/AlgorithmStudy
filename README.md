@@ -57,21 +57,23 @@
 ## 출석부 📖
 - 정상 출석: ✅, 지각: 🫥, 아픔: 🤒 ,결석: ❌, 야근: 😱
 ### 1팀
-|이름\날짜|4/19 20:00 HashTable|4/26 20:00 Stack|5/3 20:00 Sorting|5/10 20:00 Greedy|||||||||||
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|바드|✅|✅|✅|✅|||||||||||
-|우디|✅|😱|🫥|😱|||||||||||
-|크리스|🫥|❌|✅|😱|||||||||||
-|비비(5월 예정)|🤒|❌|✅|✅|||||||||||
+|날짜\이름|바드|우디|크리스|비비|
+|:-:|:-:|:-:|:-:|:-:|
+|4/19 20:00 HashTable|✅|✅|🫥|🤒|
+|4/26 20:00 Stack|✅|😱|❌|❌|
+|5/3 20:00 Sorting|✅|🫥|✅|✅|
+|5/10 20:00 Greedy|✅|😱|😱|✅|
+|5/17 22:00 DP|✅|✅|❌|✅|
 ---
 
 ### 2팀
-|이름\날짜|4/19 20:00 HashTable|4/26 20:00 Stack|5/3 20:00 Sorting|5/10 20:00 Greedy|||||||||||
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|스티븐(팀장)|✅|😱|😱|😱|||||||||||
-|써비|✅|❌|✅|✅|||||||||||
-|밀쿄|✅|😱|😱|😱|||||||||||
-|하무|❌|✅|✅|😱|||||||||||
+|날짜\이름|스티븐|써비|밀쿄|하무|
+|:-:|:-:|:-:|:-:|:-:|
+|4/19 20:00 HashTable|✅|✅|✅|❌|
+|4/26 20:00 Stack|😱|❌|😱|✅|
+|5/3 20:00 Sorting|😱|✅|😱|✅|
+|5/10 20:00 Greedy|😱|✅|😱|😱|
+|5/17 22:00 DP|❌|✅|✅|✅|
 ---
 
 
@@ -146,6 +148,24 @@
 [minimum number of swaps to make the string balanced](https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/)
 
 [reduce array size to the half](https://leetcode.com/problems/reduce-array-size-to-the-half/)
+</details>
+
+## DynamicProgramming 문제
+
+<details>
+<summary>접기/펼치기</summary>
+    
+### easy    
+[counting bits](https://leetcode.com/problems/counting-bits/)
+
+[pascal's triangle](https://leetcode.com/problems/pascals-triangle/)
+
+[fibonacci number](https://leetcode.com/problems/fibonacci-number/)
+
+### medium
+[egg drop with 2 eggs and n floors](https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/)
+
+[count substrings that digger by one character](https://leetcode.com/problems/count-substrings-that-differ-by-one-character/)
 </details>
 
 ## Convention
