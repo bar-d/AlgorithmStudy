@@ -55,3 +55,25 @@ class Solution3 {
         return min(k, numOnes) - max(0, k - numOnes - numZeros)
     }
 }
+
+// problem 4 - 1963. Minimum Number of Swaps to Make the String Balanced
+class Solution4 {
+    func minSwaps(_ s: String) -> Int {
+        var swaps = 0
+        var imbalance = 0
+        
+        for char in s {
+            if char == "[" {
+                imbalance += 1
+            } else {
+                imbalance -= 1
+                
+                if imbalance < 0 {
+                    swaps += 1
+                    imbalance = 1
+                }
+            }
+        }
+        return swaps
+    }
+}
