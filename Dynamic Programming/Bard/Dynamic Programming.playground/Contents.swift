@@ -14,3 +14,27 @@ func countBits(_ n: Int) -> [Int] {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/pascals-triangle/
+
+func generate(_ numRows: Int) -> [[Int]] {
+    var pascalArray: [[Int]] = [[1]]
+    
+    for row in 0..<numRows - 1 {
+        if row == 0 {
+            pascalArray.append([1, 1])
+        } else {
+            let previousArray = pascalArray[row]
+            var currentArray: [Int] = [1]
+            
+            for i in 0...row - 1 {
+                currentArray.append(previousArray[i] + previousArray[i + 1])
+            }
+            
+            currentArray.append(1)
+            pascalArray.append(currentArray)
+        }
+    }
+    
+    return pascalArray
+}
