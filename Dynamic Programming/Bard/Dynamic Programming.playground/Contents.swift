@@ -38,3 +38,13 @@ func generate(_ numRows: Int) -> [[Int]] {
     
     return pascalArray
 }
+
+// MARK: - https://leetcode.com/problems/fibonacci-number/solutions/3018743/one-line-solution-on-swift/
+
+func fib(_ n: Int) -> Int {
+    if n < 2 {
+        return n
+    }
+    
+    return fib(n - 1) + fib(n - 2)
+}
