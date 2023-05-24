@@ -88,3 +88,39 @@ func twoEggDrop(_ n: Int) -> Int {
     
     return dp[2][n] // Return the minimum number of moves
 }
+
+// MARK: - https://leetcode.com/problems/count-substrings-that-differ-by-one-character/
+
+/**
+ 두 개의 문자열 s와 t가 주어지면 비어 있지 않은 s의 하위 문자열을 선택하고 결과 하위 문자열이 t의 하위 문자열이 되도록 단일 문자를 다른 문자로 대체할 수 있는 방법의 수를 찾으십시오. 즉, t의 일부 하위 문자열과 정확히 한 문자 차이가 나는 s의 하위 문자열 수를 찾습니다.
+ 
+ 예를 들어, "computer"와 "computation"의 밑줄 친 하위 문자열은 'e'/'a'만 다르므로 이것이 유효한 방법입니다.
+ 
+ 위의 조건을 만족하는 하위 문자열의 수를 반환합니다.
+ 
+ 하위 문자열은 문자열 내의 연속적인 문자 시퀀스입니다.
+ */
+
+func countSubstrings(_ s: String, _ t: String) -> Int {
+    let s = Array(s)
+    let t = Array(t)
+    var same_dp = [[Int]](repeating: [Int](repeating: 0, count: t.count + 1), count: s.count + 1)
+    var diff_dp = [[Int]](repeating: [Int](repeating: 0, count: t.count + 1), count: s.count + 1)
+    var result = 0
+    
+    for i in 1...s.count {
+        for j in 1...t.count {
+            if s[i - 1] == t[j - 1] {
+                same_dp[i][j] = same_dp[i - 1][j - 1] + 1
+                diff_dp[i][j] = diff_dp[i - 1][j - 1]
+            }
+            else {
+                same_dp[i][j] = 0
+                diff_dp[i][j] = ((i == 1 && j == 1) ? 0 : same_dp[i - 1][j - 1]) + 1
+            }
+            result += diff_dp[i][j]
+        }
+    }
+    
+    return result
+}
