@@ -48,3 +48,43 @@ func fib(_ n: Int) -> Int {
     
     return fib(n - 1) + fib(n - 2)
 }
+
+// MARK: - https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/description/
+
+/**
+ 두개의 계란이 주어짐
+ 1에서 n까지 n층에 접근할 수 있음
+ 0  <= f <= n인 f층이 존재
+ f보다 높은 층에 떨어진 계란은 깨짐
+ f보다 낮은 층에 떨어진 계란을 안떨어짐
+ 이동할 때마다 깨지지 않은 계란을 가져다가 임의 x층에서 떨어뜨릴 수 있음 ( 1 <= x <= n).
+ 계란이 깨지면 더 이상 사용할 수 없음
+ 알이 깨지지 않으면 다음에 또 떨어뜨릴 수 있음
+ f의 값이 무엇인지 확실하게 결정하는 데 필요한 최소 이동 수를 반환
+ */
+
+func twoEggDrop(_ n: Int) -> Int {
+    // Create a 2D array to store the minimum number of moves
+    let eggs = 2
+    var dp = [[Int]](repeating: [Int](repeating: 0, count: n + 1), count: 3)
+    
+    // Base cases
+    for i in 1...n {
+        dp[1][i] = i // Only one egg available
+    }
+    
+    // Fill the dp array for 2 eggs and different floor combinations
+    for floors in 1...n {
+        dp[eggs][floors] = Int.max
+        for floor in 1...floors {
+            let dropsIfBreaks = dp[eggs - 1][floor - 1] // Egg breaks, check lower floors
+            let dropsIfSurvives = dp[eggs][floors - floor] // Egg survives, check upper floors
+            let drops = max(dropsIfBreaks, dropsIfSurvives) + 1 // Maximum drops between the two scenarios
+            
+            dp[eggs][floors] = min(dp[eggs][floors], drops) // Take the minimum number of moves
+        }
+    }
+    
+    
+    return dp[2][n] // Return the minimum number of moves
+}
