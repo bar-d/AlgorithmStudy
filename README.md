@@ -64,6 +64,7 @@
 |5/3 20:00 Sorting|✅|🫥|✅|✅|
 |5/10 20:00 Greedy|✅|😱|😱|✅|
 |5/17 22:00 DP|✅|✅|❌|✅|
+|5/24 22:00 DFS|❌|❌|❌|❌|
 ---
 
 ### 2팀
@@ -74,6 +75,7 @@
 |5/3 20:00 Sorting|😱|✅|😱|✅|
 |5/10 20:00 Greedy|😱|✅|😱|😱|
 |5/17 22:00 DP|❌|✅|✅|✅|
+|5/24 22:00 DFS|❌|✅|✅|✅|
 ---
 
 
@@ -166,6 +168,24 @@
 [egg drop with 2 eggs and n floors](https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/)
 
 [count substrings that digger by one character](https://leetcode.com/problems/count-substrings-that-differ-by-one-character/)
+</details>
+
+## DFS 문제
+
+<details>
+<summary>접기/펼치기</summary>
+    
+### easy    
+[univalued binary tree](https://leetcode.com/problems/univalued-binary-tree/)
+
+[island perimeter](https://leetcode.com/problems/island-perimeter/)
+
+[binary tree postorder traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
+
+### medium
+[kth smallest element in a bst](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
+
+[delete nodes and return forest](https://leetcode.com/problems/delete-nodes-and-return-forest/)
 </details>
 
 ## Convention
