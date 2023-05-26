@@ -96,3 +96,36 @@ func postorderTraversal(_ root: TreeNode?) -> [Int] {
     return postorderTraversal(root.left) + postorderTraversal(root.right) + [root.val]
 }
 
+// MARK: - https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+
+func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+    guard let root = root else {
+        return 0
+    }
+    
+    var graph: [[Int]] = [[root.val]]
+    var stack: [TreeNode?] = [root]
+    
+    while !stack.isEmpty {
+        if let currentNode = stack.popLast() {
+            if currentNode != nil {
+                if currentNode?.left != nil && currentNode?.right != nil {
+                    stack.append(currentNode?.left!)
+                    stack.append(currentNode?.right!)
+                    graph.append([currentNode!.left!.val, currentNode!.right!.val])
+                } else if currentNode?.left != nil {
+                    stack.append(currentNode?.left!)
+                    graph.append([currentNode!.left!.val])
+                } else if currentNode?.right != nil {
+                    stack.append(currentNode?.right!)
+                    graph.append([currentNode!.right!.val])
+                }
+            }
+        }
+        else {
+            graph.append([])
+        }
+    }
+    
+    return graph.flatMap { $0 }.sorted(by: { $0 < $1 })[k - 1]
+}
