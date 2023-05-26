@@ -85,3 +85,14 @@ func islandPerimeter(_ grid: [[Int]]) -> Int {
     
     return count
 }
+
+// MARK: - https://leetcode.com/problems/binary-tree-postorder-traversal/
+
+func postorderTraversal(_ root: TreeNode?) -> [Int] {
+    guard let root = root else {
+        return []
+    }
+    
+    return postorderTraversal(root.left) + postorderTraversal(root.right) + [root.val]
+}
+
