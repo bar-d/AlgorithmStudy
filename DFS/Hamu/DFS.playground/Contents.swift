@@ -76,5 +76,23 @@ class Solution2 {
     }
 }
 
-let solution = Solution2()
-print(solution.islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]))
+//MARK: - 145. Binary Tree Postorder Traversal
+
+class Solution3 {
+    func postorderTraversal(_ root: TreeNode?) -> [Int] {
+        var result = [Int]()
+        
+        func dfs(node: TreeNode?) {
+            guard let node = node else { return }
+            
+            dfs(node: node.left)
+            dfs(node: node.right)
+            result.append(node.val)
+        }
+        
+        dfs(node: root)
+        return result
+    }
+}
+
+
