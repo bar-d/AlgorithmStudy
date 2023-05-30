@@ -115,3 +115,29 @@ class Solution4 {
     }
 }
 
+//MARK: - 1110. Delete Nodes And Return Forest
+
+class Solution {
+    func delNodes(_ root: TreeNode?, _ to_delete: [Int]) -> [TreeNode?] {
+        var delete = Array(repeating: false, count: 1001)
+        to_delete.forEach { delete[$0] = true }
+        var result: [TreeNode?] = []
+        
+        func dfs(node: TreeNode?, isRoot: Bool) {
+            guard let node = node else { return }
+            if isRoot, !delete[node.val] { result.append(node) }
+            var isRoot = false
+            
+            if delete[node.val] { isRoot = true }
+            
+            dfs(node: node.left, isRoot: isRoot)
+            dfs(node: node.right, isRoot: isRoot)
+            
+            if delete[node.left?.val ?? 0] { node.left = nil }
+            if delete[node.right?.val ?? 0] { node.right = nil }
+        }
+        
+        dfs(node: root, isRoot: true)
+        return result
+    }
+}
