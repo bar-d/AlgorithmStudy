@@ -95,4 +95,23 @@ class Solution3 {
     }
 }
 
+//MARK: - 230. Kth Smallest Element in a BST
+
+class Solution4 {
+    func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+        var result = [Int]()
+        
+        func dfs(node: TreeNode?) {
+            guard let node = node else { return }
+            
+            result.append(node.val)
+            dfs(node: node.left)
+            dfs(node: node.right)
+            return
+        }
+        
+        dfs(node: root)
+        return result.sorted()[k - 1]
+    }
+}
 
