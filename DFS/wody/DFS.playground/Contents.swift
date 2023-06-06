@@ -128,3 +128,37 @@ func islandPerimeter(_ grid: [[Int]]) -> Int {
 }
 
 print("### island : \(islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]))")
+
+/*
+ https://leetcode.com/problems/binary-tree-postorder-traversal/
+ 145. Binary Tree Postorder Traversal
+
+ 이진트리 순회하며 사후 순회값을 반환
+
+ */
+
+func postorderTraversal(_ root: TreeNode?) -> [Int] {
+    var result = [Int]()
+
+    func checkNode(_ node: TreeNode?) -> TreeNode? {
+        guard let value = node?.val else { return nil }
+
+        // 왼쪽 노드가 있다
+        if let leftNode = node?.left {
+            checkNode(leftNode)
+        }
+
+        // 오른쪽 노드가 있다
+        if let rightNode = node?.right {
+            checkNode(rightNode)
+        }
+
+        // 노드의 끝
+        result.append(value)
+        return nil
+    }
+
+    checkNode(root)
+
+    return result
+}
