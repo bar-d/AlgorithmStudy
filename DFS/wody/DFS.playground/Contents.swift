@@ -51,10 +51,10 @@ func isUnivalTree(_ root: TreeNode?) -> Bool {
     return Set(values).count == 1
 }
 
-let rightNode2 = TreeNode(9, nil, nil)
-let rightNode1 = TreeNode(1, nil, rightNode2)
-let leftNode2 = TreeNode(1, nil, nil)
-let leftNode1 = TreeNode(1, leftNode2, leftNode2)
+let rightNode2 = TreeNode(5, nil, nil)
+let rightNode1 = TreeNode(4, nil, rightNode2)
+let leftNode2 = TreeNode(3, nil, nil)
+let leftNode1 = TreeNode(2, leftNode2, leftNode2)
 let testNode = TreeNode(1, leftNode1, rightNode1)
 
 print(isUnivalTree(testNode))
@@ -162,3 +162,40 @@ func postorderTraversal(_ root: TreeNode?) -> [Int] {
 
     return result
 }
+
+/*
+ https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+ 230. Kth Smallest Element in a BST
+
+ 전체 노드 값 중 k번째 작은 값 반환
+ */
+
+func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
+    var result = [Int]()
+
+    func checkNode(_ node: TreeNode?) -> TreeNode? {
+        guard let value = node?.val else { return nil }
+
+        // 왼쪽 노드가 있다
+        if let leftNode = node?.left {
+            checkNode(leftNode)
+        }
+
+        // 오른쪽 노드가 있다
+        if let rightNode = node?.right {
+            checkNode(rightNode)
+        }
+
+        // 노드의 끝
+        result.append(value)
+        return nil
+    }
+
+    checkNode(root)
+
+    result.sort(by: <)
+
+    return result[k-1]
+}
+
+print("### kth: \(kthSmallest(testNode, 3))")
