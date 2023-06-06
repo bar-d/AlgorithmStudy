@@ -58,3 +58,73 @@ let leftNode1 = TreeNode(1, leftNode2, leftNode2)
 let testNode = TreeNode(1, leftNode1, rightNode1)
 
 print(isUnivalTree(testNode))
+
+
+/*
+ https://leetcode.com/problems/island-perimeter/
+ 463. Island Perimeter
+ 섬 주변
+ */
+
+extension Int {
+    var isZero: Bool {
+        return self == 0
+    }
+}
+
+func islandPerimeter(_ grid: [[Int]]) -> Int {
+    var result = 0
+
+    for rowIndex in 0..<grid.count {
+        for colIndex in 0..<grid[rowIndex].count {
+            let cell = grid[rowIndex][colIndex]
+            // 육지면
+            if !cell.isZero {
+
+                // 북 체크
+                if 0 <= (rowIndex - 1) {
+                    let northCell = grid[rowIndex-1][colIndex]
+                    if northCell.isZero {
+                        result += 1
+                    }
+                } else {
+                    result += 1
+                }
+
+                // 서 체크
+                if 0 <= (colIndex - 1) {
+                    let westCell = grid[rowIndex][colIndex - 1]
+                    if westCell.isZero {
+                        result += 1
+                    }
+                } else {
+                    result += 1
+                }
+
+                // 남 체크
+                if (rowIndex + 1) <= (grid.count - 1) {
+                    let southCell = grid[rowIndex + 1][colIndex]
+                    if southCell.isZero {
+                        result += 1
+                    }
+                } else {
+                    result += 1
+                }
+
+                // 동 체크
+                if (colIndex + 1) <= (grid[rowIndex].count - 1) {
+                    let eastCell = grid[rowIndex][colIndex + 1]
+                    if eastCell.isZero {
+                        result += 1
+                    }
+                } else {
+                    result += 1
+                }
+            }
+        }
+    }
+
+    return result
+}
+
+print("### island : \(islandPerimeter([[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]))")
