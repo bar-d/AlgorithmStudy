@@ -199,3 +199,35 @@ func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
 }
 
 print("### kth: \(kthSmallest(testNode, 3))")
+
+/*
+ https://leetcode.com/problems/delete-nodes-and-return-forest/
+ 1110. Delete Nodes And Return Forest
+
+ 노드 삭제 및 포리스트 반환
+
+ */
+
+func delNodes(_ root: TreeNode?, _ to_delete: [Int]) -> [TreeNode?] {
+
+    var result = [TreeNode?]()
+
+    func checkNode(_ node: TreeNode?, _ isRoot: Bool) -> TreeNode? {
+        guard let node else { return nil }
+
+        let isTarget = to_delete.contains(node.val)
+        if isRoot, !isTarget {
+            result.append(node)
+        }
+
+        node.left = checkNode(node.left, isTarget)
+        node.right = checkNode(node.right, isTarget)
+
+
+        return isTarget ? nil : node
+    }
+
+    checkNode(root, true)
+
+    return result
+}
