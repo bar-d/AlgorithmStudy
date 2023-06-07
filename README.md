@@ -5,17 +5,14 @@
 
 ## 멤버 🤦‍♂️
 
-### 1팀
-
 |[바드](https://github.com/bar-d)|[우디](https://github.com/Wody95)|[크리스](https://github.com/kimjm010)|[비비](https://github.com/doyeonjeong)|
 |:---:|:---:|:---:|:---:|
 | <img src = "https://i.imgur.com/wXKAg8F.jpg" width="250" height="250">| <img src = "https://avatars.githubusercontent.com/u/44163277?v=4" width="250" height="250"> | <img src = "https://avatars.githubusercontent.com/u/87006369?v=4" width="250" height="250">| <img src = "https://avatars.githubusercontent.com/u/108422901?v=4" width="250" height="250"> |
 
-### 2팀
 
-|[스티븐](https://github.com/stevenkim18)|[써비](https://github.com/hongssup)|[밀쿄](https://github.com/dp221125)|[하무](https://github.com/MINRYUL)|
-|:---:|:---:|:---:|:---:|
-| <img src = "https://avatars.githubusercontent.com/u/35272802?v=4" width="250" height="250">| <img src = "https://avatars.githubusercontent.com/u/54879476?v=4" width="250" height="250"> | <img src = "https://avatars.githubusercontent.com/u/10572119?v=4" width="250" height="250">| <img src = "https://avatars.githubusercontent.com/u/55181961?v=4" width="250" height="250"> |
+|[써비](https://github.com/hongssup)|[밀쿄](https://github.com/dp221125)|[하무](https://github.com/MINRYUL)|
+|:---:|:---:|:---:|
+| <img src = "https://avatars.githubusercontent.com/u/54879476?v=4" width="250" height="250"> | <img src = "https://avatars.githubusercontent.com/u/10572119?v=4" width="250" height="250">| <img src = "https://avatars.githubusercontent.com/u/55181961?v=4" width="250" height="250"> |
 
 
 ## 자료 📑
@@ -56,27 +53,21 @@
 
 ## 출석부 📖
 - 정상 출석: ✅, 지각: 🫥, 아픔: 🤒 ,결석: ❌, 야근: 😱
-### 1팀
-|날짜\이름|바드|우디|크리스|비비|
-|:-:|:-:|:-:|:-:|:-:|
-|4/19 20:00 HashTable|✅|✅|🫥|🤒|
-|4/26 20:00 Stack|✅|😱|❌|❌|
-|5/3 20:00 Sorting|✅|🫥|✅|✅|
-|5/10 20:00 Greedy|✅|😱|😱|✅|
-|5/17 22:00 DP|✅|✅|❌|✅|
-|5/24 22:00 DFS|❌|❌|❌|❌|
+
+|날짜\이름|바드|우디|크리스|비비|써비|밀쿄|하무|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|4/19 20:00 HashTable|✅|✅|🫥|🤒|✅|✅|❌|
+|4/26 20:00 Stack|✅|😱|❌|❌|❌|😱|✅|
+|5/3 20:00 Sorting|✅|🫥|✅|✅|✅|😱|✅|
+|5/10 20:00 Greedy|✅|😱|😱|✅|✅|😱|😱|
+|5/17 22:00 DP|✅|✅|❌|✅|✅|✅|✅|
+|5/24 22:00 DFS|❌|❌|❌|❌|✅|✅|✅|
+|6/7 22:00 BFS|✅|❌|❌|🫥|✅|✅|🫥|
+|6/14 22:00 ||||||||
+|6/21 22:00 ||||||||
+|6/28 22:00 ||||||||
 ---
 
-### 2팀
-|날짜\이름|스티븐|써비|밀쿄|하무|
-|:-:|:-:|:-:|:-:|:-:|
-|4/19 20:00 HashTable|✅|✅|✅|❌|
-|4/26 20:00 Stack|😱|❌|😱|✅|
-|5/3 20:00 Sorting|😱|✅|😱|✅|
-|5/10 20:00 Greedy|😱|✅|😱|😱|
-|5/17 22:00 DP|❌|✅|✅|✅|
-|5/24 22:00 DFS|❌|✅|✅|✅|
----
 
 
 ## HashTable 문제
@@ -186,6 +177,24 @@
 [kth smallest element in a bst](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 
 [delete nodes and return forest](https://leetcode.com/problems/delete-nodes-and-return-forest/)
+</details>
+
+## BFS 문제
+
+<details>
+<summary>접기/펼치기</summary>
+    
+### easy    
+[Maximum depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree)
+
+[Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree)
+
+[Maximum Depth of binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree)
+
+### medium
+[N-ary Tree Level Order Traversal](https://leetcode.com/problems/n-ary-tree-level-order-traversal)
+
+[Lowest Common Ancestor of Deepest Leaves](https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves)
 </details>
 
 ## Convention
