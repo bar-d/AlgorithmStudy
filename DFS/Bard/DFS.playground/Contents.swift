@@ -129,3 +129,28 @@ func kthSmallest(_ root: TreeNode?, _ k: Int) -> Int {
     
     return graph.flatMap { $0 }.sorted(by: { $0 < $1 })[k - 1]
 }
+
+// MARK: - https://leetcode.com/problems/delete-nodes-and-return-forest/
+
+func delNodes(_ root: TreeNode?, _ to_delete: [Int]) -> [TreeNode?] {
+    
+    func del(_ node: TreeNode? = root, _ parent: TreeNode? = nil, _ left: Bool = false) -> [TreeNode?] {
+        
+        guard let node = node else { return [] }
+        
+        var res = [TreeNode?]()
+        if parent == nil, !to_delete.contains(node.val) { res.append(node) }
+        
+        if to_delete.contains(node.val) {
+            if left {parent?.left = nil }
+            else { parent?.right = nil }
+            
+            if let l = node.left, !to_delete.contains(l.val) { res.append(l) }
+            if let r = node.right, !to_delete.contains(r.val) { res.append(r) }
+        }
+        
+        return res + del(node.left, node, true) + del(node.right, node, false)
+    }
+    
+    return del(root)
+}
