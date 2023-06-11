@@ -89,3 +89,34 @@ func averageOfLevels(_ root: TreeNode?) -> [Double] {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/maximum-depth-of-binary-tree/
+
+func maxDepth(_ root: TreeNode?) -> Int {
+    guard let root = root else {
+        return 0
+    }
+    
+    var nodes = [root]
+    var depth = 1
+    
+    while !nodes.isEmpty {
+        var newNodes: [TreeNode?] = []
+        
+        for node in nodes {
+            if node.left != nil || node.right != nil {
+                depth += 1
+                break
+            }
+        }
+        
+        for node in nodes {
+            newNodes.append(node.left)
+            newNodes.append(node.right)
+        }
+        
+        nodes = newNodes.compactMap { $0 }
+    }
+    
+    return depth
+}
