@@ -176,3 +176,65 @@ func levelOrder(_ root: Node?) -> [[Int]] {
         .sorted { $0.key < $1.key }
         .map { $0.value }
 }
+
+/*
+ https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
+ 1123. Lowest Common Ancestor of Deepest Leaves
+
+ 문제 조건
+ 이진 트리의 노드는 자식이 없는 경우에만 '잎'이라고 말할 수 있습니다.
+ 이진 트리의 잎 중 가장 깊이(depth) 있는 잎의 가장 낮은 공통 조상을 반환합니다.
+
+
+ 이해하기 어려우니 그려가며 풀어봅시다.
+
+     A
+    / \
+   B   C
+  / \
+ D   E
+
+ 위 조건에서 현재 가장 깊이 있는 잎은 'D'와 'E' 입니다.
+ 둘의 공통 조상은 B입니다.
+
+      A
+     / \
+    B   C
+   / \
+  D   E
+       \
+        F
+
+ 만약 다음과 같은 이진 트리가 주어질 경우 가장 깊은 잎은 F이며 하나이기 때문에 가장 낮은 공통 조상은 자기 자신이 됩니다.
+ 따라서 답은 F입니다.
+
+        A
+       / \
+      B   C
+     / \
+    D   E
+   /     \
+  F       G
+
+만약 다음과 같은 이진 트리가 주어질 경우 가장 깊은 잎은 F, G이며 공통 조상은 B입니다.
+ */
+
+func lcaDeepestLeaves(_ root: TreeNode?) -> TreeNode? {
+
+    func search(_ node: TreeNode?) -> (node: TreeNode?, currentLevel: Int) {
+        guard let node = node else { return (node: nil, currentLevel: -1 ) }
+        
+        let left: (node: TreeNode?, currentLevel: Int) = search(node.left)
+        let right: (node: TreeNode?, currentLevel: Int) = search(node.right)
+
+        if left.currentLevel == right.currentLevel {
+            return (node: node, left.currentLevel + 1)
+        } else if right.currentLevel < left.currentLevel {
+            return (node: left.node, left.currentLevel + 1)
+        } else {
+            return (node: right.node, right.currentLevel + 1)
+        }
+    }
+
+    return search(root).node
+}
