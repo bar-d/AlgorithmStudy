@@ -147,3 +147,32 @@ func maxDepth(_ root: TreeNode?) -> Int {
 
     return maxDepth
 }
+
+/*
+ https://leetcode.com/problems/n-ary-tree-level-order-traversal/
+ 429. N-ary Tree Level Order Traversal
+ N항 트리 수준 순회
+ 다항 트리가 주어지면 해당 노드 값의 레벨별 순회를 반환합니다.
+ */
+
+func levelOrder(_ root: Node?) -> [[Int]] {
+    guard let root = root else { return [] }
+
+    var valDict: [Int: [Int]] = [:]
+
+    func search(root: Node, currentDepth: Int = 1) {
+
+        valDict[currentDepth, default: []].append(root.val)
+
+        root.children
+            .map { children in
+                search(root: children, currentDepth: currentDepth + 1)
+            }
+    }
+
+    search(root: root)
+
+    return valDict
+        .sorted { $0.key < $1.key }
+        .map { $0.value }
+}
