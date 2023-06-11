@@ -120,3 +120,32 @@ func maxDepth(_ root: TreeNode?) -> Int {
     
     return depth
 }
+
+// MARK: - https://leetcode.com/problems/n-ary-tree-level-order-traversal/
+
+func levelOrder(_ root: Node?) -> [[Int]] {
+    guard let root = root else {
+        return []
+    }
+    
+    var nodes = [root]
+    var result: [[Int]] = []
+    
+    while !nodes.isEmpty {
+        var currentNodes: [Node?] = []
+        var currentValues: [Int] = []
+        
+        for node in nodes {
+            currentValues.append(node.val)
+        }
+        
+        for node in nodes {
+            currentNodes += node.children
+        }
+        
+        nodes = currentNodes.compactMap { $0 }
+        result.append(currentValues)
+    }
+    
+    return result
+}
