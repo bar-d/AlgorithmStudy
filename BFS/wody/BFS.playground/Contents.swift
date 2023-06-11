@@ -118,3 +118,32 @@ var level1LeftNode = TreeNode(9)
 let rootNode = TreeNode(3, level1LeftNode, level1RightNode)
 
 print(averageOfLevels(rootNode))
+
+/*
+ https://leetcode.com/problems/maximum-depth-of-binary-tree/
+ 104. Maximum Depth of Binary Tree
+ 이진트리의 최대 깊이
+ */
+
+func maxDepth(_ root: TreeNode?) -> Int {
+    guard let root = root else { return 0 }
+    var maxDepth = 1
+
+    func search(node: TreeNode, currentDepth: Int = 1) {
+        if maxDepth < currentDepth {
+            maxDepth = currentDepth
+        }
+
+        if let left = node.left {
+            search(node: left, currentDepth: currentDepth + 1)
+        }
+
+        if let right = node.right {
+            search(node: right, currentDepth: currentDepth + 1)
+        }
+    }
+
+    search(node: root)
+
+    return maxDepth
+}
