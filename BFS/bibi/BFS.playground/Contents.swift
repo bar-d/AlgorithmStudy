@@ -92,3 +92,12 @@ func averageOfLevels(_ root: TreeNode?) -> [Double] {
     
     return result
 }
+
+// MARK: - Maximum Depth of binary Tree
+
+func maxDepth(_ root: TreeNode?) -> Int {
+    guard let node = root else { return 0 }
+    let leftDepth = maxDepth(node.left)
+    let rightDepth = maxDepth(node.right)
+    return max(leftDepth, rightDepth) + 1
+}
