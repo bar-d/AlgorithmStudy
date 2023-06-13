@@ -35,3 +35,60 @@ func maxDepth(_ root: Node?) -> Int {
     }
     return maxDepth
 }
+
+// MARK: - https://leetcode.com/problems/average-of-levels-in-binary-tree/
+
+public class TreeNode {
+    public var val: Int
+    public var left: TreeNode?
+    public var right: TreeNode?
+    
+    public init() {
+        self.val = 0
+        self.left = nil
+        self.right = nil
+    }
+    
+    public init(_ val: Int) {
+        self.val = val
+        self.left = nil
+        self.right = nil
+    }
+    
+    public init(_ val: Int, _ left: TreeNode?, _ right: TreeNode?) {
+        self.val = val
+        self.left = left
+        self.right = right
+    }
+}
+
+func averageOfLevels(_ root: TreeNode?) -> [Double] {
+    guard let root = root else { return [] }
+    
+    var result = [Double]()
+    var queue = [TreeNode]()
+    queue.append(root)
+    
+    while !queue.isEmpty {
+        let levelSize = queue.count
+        var levelSum = 0
+        
+        for _ in 0..<levelSize {
+            let node = queue.removeFirst()
+            levelSum += node.val
+            
+            if let left = node.left {
+                queue.append(left)
+            }
+            
+            if let right = node.right {
+                queue.append(right)
+            }
+        }
+        
+        let average = Double(levelSum) / Double(levelSize)
+        result.append(average)
+    }
+    
+    return result
+}
