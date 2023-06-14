@@ -63,9 +63,9 @@
 |5/17 22:00 DP|✅|✅|❌|✅|✅|✅|✅|
 |5/24 22:00 DFS|❌|❌|❌|❌|✅|✅|✅|
 |6/7 22:00 BFS|✅|❌|❌|🫥|✅|✅|🫥|
-|6/14 22:00 ||||||||
-|6/21 22:00 ||||||||
-|6/28 22:00 ||||||||
+|6/14 22:00 Binary Search|✅|✅| ❌ | ❌ |✅|😱|✅|
+|6/21 22:00 |||❌|||||
+|6/28 22:00 |||❌|||||
 ---
 
 
@@ -195,6 +195,24 @@
 [N-ary Tree Level Order Traversal](https://leetcode.com/problems/n-ary-tree-level-order-traversal)
 
 [Lowest Common Ancestor of Deepest Leaves](https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves)
+</details>
+
+## Binary Search 문제
+
+<details>
+<summary>접기/펼치기</summary>
+    
+### easy    
+[The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix)
+
+[Longest Subsequence with Limited Sum](https://leetcode.com/problems/longest-subsequence-with-limited-sum)
+
+[Find the Distance Value Between Two Arrays](https://leetcode.com/problems/find-the-distance-value-between-two-arrays)
+
+### medium
+[Find Positive Integer Solution for a given equation](https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation)
+
+[Peak index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array)
 </details>
 
 ## Convention
