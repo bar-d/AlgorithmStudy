@@ -30,3 +30,47 @@ print(kWeakestRows([[1,1,0,0,0],
                     [1,1,0,0,0],
                     [1,1,1,1,1]], 3))
 
+/*
+ https://leetcode.com/problems/longest-subsequence-with-limited-sum/
+ 2389. Longest Subsequence With Limited Sum
+ 합이 제한된 가장 긴 하위 시퀀스
+
+ nums와 queries가 주어집니다.
+
+ nums에 있는 요소들의 합이 각 querie의 값보다 작거나 같은 숫자가 되는 가장 긴 하위 시퀸스의 길이를 반환하세요
+
+ 1. nums를 오름차순으로 정렬합니다.
+ 2. 각 queries를 순회합니다.
+ 3. 오름차순으로 정렬한 nums의 요소를 비교할 배열 target: [Int]에 push하면서 querie보다 큰 숫자가 나올 때 까지 push합니다.
+ 4. target의 합이 쿼리보다 커지면 마지막 push 요소를 pop하고 target의 count를 반환합니다.
+ */
+
+func answerQueries(_ nums: [Int], _ queries: [Int]) -> [Int] {
+    guard !nums.isEmpty,
+          !queries.isEmpty
+    else { return [] }
+
+    var sortedNums = nums.sorted()
+
+    return queries.map { querie in
+        var target = [Int]()
+        var targetNum: Int = 0
+
+        for num in sortedNums {
+            guard num <= querie else { break }
+            target.append(num)
+
+            if querie < target.reduce(0, +) {
+                target.popLast()
+                targetNum = target.count
+                break
+            } else {
+                targetNum = target.count
+            }
+        }
+
+        return targetNum
+    }
+}
+
+print(answerQueries([4,5,2,1], [3,10,21]))
