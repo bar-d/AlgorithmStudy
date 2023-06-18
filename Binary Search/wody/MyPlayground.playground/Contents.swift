@@ -74,3 +74,35 @@ func answerQueries(_ nums: [Int], _ queries: [Int]) -> [Int] {
 }
 
 print(answerQueries([4,5,2,1], [3,10,21]))
+
+/*
+ https://leetcode.com/problems/find-the-distance-value-between-two-arrays/
+ 1385. Find the Distance Value Between Two Arrays
+ 두 배열 사이의 거리 값 찾기...?
+
+ 주어진 d 보다 |arr[i]-arr[j]| 값이 작다면 그건 배제
+
+ 두 배열 사이의 거리가 d보다 큰 배열의 갯수를 반환하자
+ */
+func findTheDistanceValue(_ arr1: [Int], _ arr2: [Int], _ d: Int) -> Int {
+    var distanceValues: [Int] = []
+
+    for num1 in arr1 {
+        var isDistanceValue = true
+
+        for num2 in arr2 {
+            if abs(num1 - num2) <= d {
+                isDistanceValue = false
+                break
+            }
+        }
+
+        if isDistanceValue {
+            distanceValues.append(num1)
+        }
+    }
+
+    return distanceValues.count
+}
+
+print("### distance : \(findTheDistanceValue([1,4,2,3], [-4,-3,6,10,20,30], 3))")
