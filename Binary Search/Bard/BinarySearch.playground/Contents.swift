@@ -82,3 +82,24 @@ func findSolution(_ customfunction: CustomFunction, _ z: Int) -> [[Int]] {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/peak-index-in-a-mountain-array
+
+func peakIndexInMountainArray(_ arr: [Int]) -> Int {
+    var currentLevel = 0
+    
+    for (level, element) in arr.enumerated() {
+        if level > 0 {
+            let currentElement = element
+            let previousElement = arr[currentLevel]
+            
+            if currentElement > previousElement {
+                currentLevel = level
+            } else {
+                break
+            }
+        }
+    }
+    
+    return currentLevel
+}
