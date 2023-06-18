@@ -25,3 +25,29 @@ func kWeakestRows(_ mat: [[Int]], _ k: Int) -> [Int] {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/longest-subsequence-with-limited-sum/description/
+
+func answerQueries(_ nums: [Int], _ queries: [Int]) -> [Int] {
+    let sortedNums = nums.sorted(by: <)
+    var result: [Int] = []
+    
+    for sum in queries {
+        var totalNum = 0
+        var count = 0
+        
+        for currentNum in sortedNums {
+            totalNum += currentNum
+            
+            if totalNum <= sum {
+                count += 1
+            } else {
+                break
+            }
+        }
+        
+        result.append(count)
+    }
+    
+    return result
+}
