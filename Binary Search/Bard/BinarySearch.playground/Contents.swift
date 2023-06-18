@@ -51,3 +51,34 @@ func answerQueries(_ nums: [Int], _ queries: [Int]) -> [Int] {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation
+
+class CustomFunction {
+    func f(_ x: Int, _ y: Int) -> Int {
+        var result = 0
+        // do something
+        return result
+    }
+}
+
+func findSolution(_ customfunction: CustomFunction, _ z: Int) -> [[Int]] {
+    var result: [[Int]] = []
+    var x = 1
+    var y = 1000
+    
+    while x <= 1000 && y >= 1 {
+        let value = customfunction.f(x, y)
+        if value == z {
+            result.append([x, y])
+            x += 1
+            y -= 1
+        } else if value < z {
+            x += 1
+        } else {
+            y -= 1
+        }
+    }
+    
+    return result
+}
