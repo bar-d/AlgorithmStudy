@@ -106,3 +106,30 @@ func findTheDistanceValue(_ arr1: [Int], _ arr2: [Int], _ d: Int) -> Int {
 }
 
 print("### distance : \(findTheDistanceValue([1,4,2,3], [-4,-3,6,10,20,30], 3))")
+
+/*
+ https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation/
+ 1237. Find Positive Integer Solution for a Given Equation
+
+ 주어진 방정식에 대한 양의 정수 솔루션 찾기
+
+ 잠시 내려놓기
+
+ */
+
+
+/*
+ https://leetcode.com/problems/peak-index-in-a-mountain-array/
+ 852. Peak Index in a Mountain Array
+
+ 가장 피크인 Array의 인덱스를 반환하기
+ -> 고점을 찾아라
+ */
+
+func peakIndexInMountainArray(_ arr: [Int]) -> Int {
+    guard let max = arr.max() else { return 0 }
+
+    return arr.firstIndex(of: max) ?? 0
+}
+
+
