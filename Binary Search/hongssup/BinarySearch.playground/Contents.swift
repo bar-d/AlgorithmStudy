@@ -75,3 +75,16 @@ func findTheDistanceValue(_ arr1: [Int], _ arr2: [Int], _ d: Int) -> Int {
     }
     return result
 }
+
+// MARK: - https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation
+
+func findSolution(_ customfunction: CustomFunction, _ z: Int) -> [[Int]] {
+    
+}
+
+// MARK: - https://leetcode.com/problems/peak-index-in-a-mountain-array
+
+func peakIndexInMountainArray(_ arr: [Int]) -> Int {
+    return arr.firstIndex(of: arr.max()!)!
+}
+
