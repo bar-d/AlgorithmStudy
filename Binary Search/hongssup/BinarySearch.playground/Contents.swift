@@ -60,3 +60,18 @@ func binarySearch(_ sums: [Int], _ query: Int) -> Int {
     }
     return s - 1
 }
+
+// MARK: - https://leetcode.com/problems/find-the-distance-value-between-two-arrays
+
+func findTheDistanceValue(_ arr1: [Int], _ arr2: [Int], _ d: Int) -> Int {
+    var result = arr1.count
+    for i in arr1 {
+        for j in arr2 {
+            if abs(i - j) <= d {
+                result -= 1
+                break
+            }
+        }
+    }
+    return result
+}
