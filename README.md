@@ -64,7 +64,7 @@
 |5/24 22:00 DFS|❌|❌|❌|❌|✅|✅|✅|
 |6/7 22:00 BFS|✅|❌|❌|🫥|✅|✅|🫥|
 |6/14 22:00 Binary Search|✅|✅| ❌ | ❌ |✅|😱|✅|
-|6/21 22:00 |||❌|||||
+|6/21 22:00 Graph|✅|❌|❌|✅|✅|😱|✅|
 |6/28 22:00 |||❌|||||
 ---
 
@@ -213,6 +213,24 @@
 [Find Positive Integer Solution for a given equation](https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation)
 
 [Peak index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array)
+</details>
+
+## Graph 문제
+
+<details>
+<summary>접기/펼치기</summary>
+    
+### easy    
+[find center of star graph](https://leetcode.com/problems/find-center-of-star-graph)
+
+[find if path exists in graph](https://leetcode.com/problems/find-if-path-exists-in-graph)
+
+[find the town judge](https://leetcode.com/problems/find-the-town-judge)
+
+### medium
+[all paths from source to target](https://leetcode.com/problems/all-paths-from-source-to-target)
+
+[minimum number of vertices to reach all nodes](https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes)
 </details>
 
 ## Convention
