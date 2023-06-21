@@ -57,3 +57,26 @@ func binarySearch(_ arr: [Int]) -> Int {
     }
     return start // 1의 개수 반환
 }
+
+// MARK: - https://leetcode.com/problems/longest-subsequence-with-limited-sum/
+
+func answerQueries(_ nums: [Int], _ queries: [Int]) -> [Int] {
+    var ans: [Int] = []
+    let sortedNums = nums.sorted()
+    
+    for query in queries {
+        var count = 0
+        var sum = 0
+        
+        for num in sortedNums {
+            if sum + num <= query { // num을 추가해도 합이 query 이하인 경우
+                sum += num
+                count += 1
+            } else { // 최대 부분수열 크기에 도달했거나, 추가로 num을 더하면 합이 query 초과인 경우
+                break
+            }
+        }
+        ans.append(count)
+    }
+    return ans
+}
