@@ -56,3 +56,22 @@ func allPathsSourceTarget(_ graph: [[Int]]) -> [[Int]] {
     
     return result
 }
+
+// MARK: - https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/description/
+
+func findSmallestSetOfVertices(_ n: Int, _ edges: [[Int]]) -> [Int] {
+    var graph = Array(repeating: false, count: n)
+    var result: [Int] = []
+    
+    for i in 0..<edges.count {
+        graph[edges[i][1]] = true
+    }
+    
+    for i in 0..<n {
+        if graph[i] == false {
+            result.append(i)
+        }
+    }
+    
+    return result
+}
