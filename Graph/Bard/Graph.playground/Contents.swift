@@ -31,3 +31,28 @@ func findJudge(_ n: Int, _ trust: [[Int]]) -> Int {
     
     return -1
 }
+
+// MARK: - https://leetcode.com/problems/all-paths-from-source-to-target/description/
+
+func allPathsSourceTarget(_ graph: [[Int]]) -> [[Int]] {
+    let length = graph.count - 1
+    
+    var stack: [Int] = []
+    var result: [[Int]] = []
+    
+    func dfs(_ n: Int) {
+        guard n != length else {
+            result.append(stack + [length])
+            return
+        }
+        for i in graph[n] {
+            stack.append(n)
+            dfs(i)
+            stack.removeLast()
+        }
+    }
+    
+    dfs(0)
+    
+    return result
+}
