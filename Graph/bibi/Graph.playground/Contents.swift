@@ -3,7 +3,7 @@
 func findCenter(_ edges: [[Int]]) -> Int {
     var numSet = Set<Int>()
     
-    for num in edges.flatMap { $0 } {
+    for num in edges.flatMap({ $0 }) {
         if numSet.contains(num) { return num }
         numSet.insert(num)
     }
@@ -31,4 +31,27 @@ func findJudge(_ n: Int, _ trust: [[Int]]) -> Int {
     }
 
     return -1
+}
+
+// MARK: - https://leetcode.com/problems/all-paths-from-source-to-target
+
+func allPathsSourceTarget(_ graph: [[Int]]) -> [[Int]] {
+    var path: [Int] = [0]
+    var allPaths: [[Int]] = []
+
+    func dfs(_ node: Int) {
+        if node == graph.count - 1 {
+            allPaths.append(path)
+            return
+        }
+
+        for neighbor in graph[node] {
+            path.append(neighbor)
+            dfs(neighbor)
+            path.removeLast()
+        }
+    }
+
+    dfs(0)
+    return allPaths
 }
